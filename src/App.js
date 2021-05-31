@@ -1,6 +1,10 @@
 import './App.scss';
 import { BrowserRouter as Router, Route, NavLink, Switch, Redirect } from "react-router-dom";
 import Home from "./Home"
+import About from "./About"
+import Contact from "./Contact"
+import Experience from "./Experience"
+import HamburgerBtn from "./lib/HamburgerBtn"
 //다음목표 about 페이지 만들기
 //about을 채워보기
 //인터액션 
@@ -9,37 +13,40 @@ import Home from "./Home"
 //네비게이션을 클릭하면 해당 위치로 이동한다.
 
 function App() {
+	const clickHandler = (isActive) => {
+		console.log(isActive);
+	};
 	return (
 		<div className="App">
 			<header className="App-header">
+				<div>home버튼</div>
+				<HamburgerBtn clickHandler={clickHandler}></HamburgerBtn>
 			</header>
-
-			<Router>
-				<NavLink to={`/portfolio/Home`} activeClassName={'linkActive'}>Home</NavLink>
-				<NavLink to={`/portfolio/work`} activeClassName={'linkActive'}>work</NavLink>
-				<NavLink to={`/portfolio/contact`} activeClassName={'linkActive'}>contact</NavLink>
-				<NavLink to={`/portfolio/youtube`} activeClassName={'linkActive'}>youtube</NavLink>
-				<Switch>
-					<Route exact path="/portfolio">
-						<Redirect to={`/portfolio/Home`} />
-					</Route>
-					<Route path={`/portfolio/Home`}>
-						<Home></Home>
-					</Route>
-					<Route path={`/portfolio/work`}>
-						<div>2</div>
-					</Route>
-					<Route path={`/portfolio/contact`}>
-						<div>3</div>
-					</Route>
-					<Route path={`/portfolio/youtube`}>
-						<div>4</div>
-					</Route>
-				</Switch>
-			</Router>
-			<footer>
-
-			</footer>
+			<main>
+				<Router>
+					<NavLink to={`/portfolio/home`} activeClassName={'linkActive'}>Home</NavLink>
+					<NavLink to={`/portfolio/experience`} activeClassName={'linkActive'}>Experience</NavLink>
+					<NavLink to={`/portfolio/about`} activeClassName={'linkActive'}>About</NavLink>
+					<NavLink to={`/portfolio/contact`} activeClassName={'linkActive'}>contact</NavLink>
+					<Switch>
+						<Route exact path="/portfolio">
+							<Redirect to={`/portfolio/home`} />
+						</Route>
+						<Route path={`/portfolio/home`}>
+							<Home></Home>
+						</Route>
+						<Route path={`/portfolio/experience`}>
+							<Experience></Experience>
+						</Route>
+						<Route path={`/portfolio/about`}>
+							<About></About>
+						</Route>
+						<Route path={`/portfolio/contact`}>
+							<Contact></Contact>
+						</Route>
+					</Switch>
+				</Router>
+			</main>
 		</div >
 	);
 }

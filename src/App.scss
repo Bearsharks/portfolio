@@ -3,3 +3,12 @@
     pointer-events: none;
     color : red;
 }
+
+header {
+    display: flex;
+    float:right;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+}

@@ -1,0 +1,47 @@
+.hamburger-btn {
+    height:100%; 
+    display: flex;
+    align-items: center;
+}
+
+@mixin hamburger-line (){
+    width: 25px;
+    height: 2px;
+    background: #000;
+}
+
+@mixin hamburger-pseudo (){
+    content: "";
+    display: block;
+    position:relative;
+}
+
+.hamburger {
+    @include hamburger-line();
+    margin : 0px 10px 0px 10px;   
+    &:after{
+        @include hamburger-pseudo ();
+        @include hamburger-line();
+        top : -10px;
+      }
+    
+    &:before {
+        @include hamburger-pseudo ();
+        @include hamburger-line();
+        top : 8px;
+    } 
+}
+
+.hamburger--active {
+    background: none;
+    &:after{
+        top : -1px;
+        transform: rotate( 45deg );
+      }
+    
+    &:before {
+        top : 1px;
+        transform: rotate( -45deg );
+    }
+    
+}
