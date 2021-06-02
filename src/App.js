@@ -1,10 +1,12 @@
 import './App.scss';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch, Redirect } from "react-router-dom";
 import Home from "./Home"
 import About from "./About"
 import Contact from "./Contact"
 import Experience from "./Experience"
 import HamburgerBtn from "./lib/HamburgerBtn"
+import Mynav from "./lib/Navigation"
 //다음목표 about 페이지 만들기
 //about을 채워보기
 //인터액션 
@@ -13,21 +15,19 @@ import HamburgerBtn from "./lib/HamburgerBtn"
 //네비게이션을 클릭하면 해당 위치로 이동한다.
 
 function App() {
-	const clickHandler = (isActive) => {
-		console.log(isActive);
+	const [isNavActive, setNavActive] = useState(false);
+	const showNav = (isActive) => {
+		setNavActive(isActive);
 	};
 	return (
 		<div className="App">
 			<header className="App-header">
 				<div>home버튼</div>
-				<HamburgerBtn clickHandler={clickHandler}></HamburgerBtn>
+				<HamburgerBtn clickHandler={showNav}></HamburgerBtn>
 			</header>
 			<main>
 				<Router>
-					<NavLink to={`/portfolio/home`} activeClassName={'linkActive'}>Home</NavLink>
-					<NavLink to={`/portfolio/experience`} activeClassName={'linkActive'}>Experience</NavLink>
-					<NavLink to={`/portfolio/about`} activeClassName={'linkActive'}>About</NavLink>
-					<NavLink to={`/portfolio/contact`} activeClassName={'linkActive'}>contact</NavLink>
+					<Mynav Active={isNavActive} />
 					<Switch>
 						<Route exact path="/portfolio">
 							<Redirect to={`/portfolio/home`} />
