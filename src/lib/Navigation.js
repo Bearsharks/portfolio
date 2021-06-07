@@ -1,12 +1,21 @@
+import React from "react"
 import './Navigation.scss';
 import { useRecoilState } from 'recoil';
 import { isNavActive } from '../atoms/isNavActive'
 
-function Navigation(props) {
-    const [isActive, setActive] = useRecoilState(isNavActive);
+function Navigation({ children }) {
+    const [isActive, setNavActive] = useRecoilState(isNavActive);
+    const inActiveNav = (e) => {
+        if (e.target.href) setNavActive(false);
+    }
     return (
-        <div className={isActive ? "navigation navigation--active" : "navigation navigation--inactive"}>
-            {props.children}
+        <div
+            onClick={inActiveNav}
+            className={"navigation " + (isActive ? "navigation--active" : "navigation--inactive")}
+        >
+            {
+                children
+            }
         </div>
     );
 }
