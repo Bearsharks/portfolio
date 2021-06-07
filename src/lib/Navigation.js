@@ -1,8 +1,11 @@
 import './Navigation.scss';
-function Navigation(props) {
+import { useRecoilState } from 'recoil';
+import { isNavActive } from '../atoms/isNavActive'
 
+function Navigation(props) {
+    const [isActive, setActive] = useRecoilState(isNavActive);
     return (
-        <div className={props.Active ? "navigation navigation--active" : "navigation navigation--inactive"}>
+        <div className={isActive ? "navigation navigation--active" : "navigation navigation--inactive"}>
             {props.children}
         </div>
     );

@@ -1,5 +1,4 @@
 import './App.scss';
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch, Redirect } from "react-router-dom";
 import Home from "./Home"
 import About from "./About"
@@ -8,22 +7,16 @@ import Experience from "./Experience"
 import HamburgerBtn from "./lib/HamburgerBtn"
 import Mynav from "./lib/Navigation"
 
-window.globalState = { abc: "abc" };
 function App(props) {
-	const [isNavActive, setNavActive] = useState(false);
-	const setNavActiveState = (isActive) => {
-		setNavActive(isActive);
-	};
-
 	return (
 		<div className="App">
 			<header className="App-header">
 				<div>home버튼</div>
-				<HamburgerBtn clickHandler={setNavActiveState}></HamburgerBtn>
+				<HamburgerBtn></HamburgerBtn>
 			</header>
 			<main>
 				<Router>
-					<Mynav Active={isNavActive}>
+					<Mynav>
 						<NavLink to={`/portfolio/home`} activeClassName={'linkActive'}>Home</NavLink>
 						<NavLink to={`/portfolio/experience`} activeClassName={'linkActive'}>Experience</NavLink>
 						<NavLink to={`/portfolio/about`} activeClassName={'linkActive'}>About</NavLink>
