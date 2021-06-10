@@ -5,7 +5,7 @@ import Home from "./Home"
 import About from "./About"
 import Contact from "./Contact"
 import Experience from "./Experience"
-import Mynav from "./lib/Navigation"
+import Mynav from "./components/Navigation"
 
 function MainContents(props) {
     const history = useHistory();

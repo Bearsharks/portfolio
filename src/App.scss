@@ -2,13 +2,21 @@
 .App{
     margin: auto;
     overflow-x:hidden;
+    height: 100vh;
 }
 
-header {
+header{
+    height: 50px;
+}
+
+.header-wrapper {
     display: flex;
     float:right;
     align-items: center;
     justify-content: space-between;
     height: 50px;
     width: 100%;
+}
+main {
+    height: calc(100% - 50px);
 }

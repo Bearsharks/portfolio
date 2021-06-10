@@ -13,9 +13,7 @@ function Navigation({ children }) {
             onClick={inActiveNav}
             className={"navigation " + (isActive ? "navigation--active" : "navigation--inactive")}
         >
-            {
-                children
-            }
+            {children}
         </div>
     );
 }
