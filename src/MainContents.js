@@ -7,7 +7,6 @@ import Contact from "./Contact"
 import Experience from "./Experience"
 import Mynav from "./lib/Navigation"
 
-
 function MainContents(props) {
     const history = useHistory();
     const getLocationId = ({ pathname, search, hash }) => {
