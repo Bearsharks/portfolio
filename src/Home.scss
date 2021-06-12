@@ -16,14 +16,16 @@
     overflow-x: hidden;
     &::-webkit-scrollbar {
         //@function:#f4f4f4;
-        width:7px;
+        width:6px;
     }
     
     /* background of the scrollbar except button or resizer */
     &::-webkit-scrollbar-track {
         //background-color:#f4f4f4;
     }
-    
+    &::-webkit-scrollbar-thumb:hover {
+        background-color:#939397;
+    }
     /* scrollbar itself */
     &::-webkit-scrollbar-thumb {
         background-color:#babac0;
@@ -33,15 +35,6 @@
         display:none;
     }
 }
-.flex-wrapper--focus-intro{
-    transform : translate3d(0,0,0);
-    transition : all 0.5s ease;
-}
-
-.flex-wrapper--focus-article{
-    transform : translate3d(-100%,0,0);
-    transition : all 0.5s ease;
-}
 
 .flex-wrapper__intro {
     @include flex-element();  
@@ -49,13 +42,35 @@
     background-color :aqua;  
 }
 
-.flex-wrapper__article {
+.flex-wrapper-article {
     @include flex-element();  
     height:5000px;    
     background-color: greenyellow;
 }
-.test{
+.article-frame{
+    width: fit-content;
     height:calc(100vh - 50px); 
-    width:2000px;
     background-color: rgb(220, 233, 200);
+    & ul{
+        display:flex;
+        list-style: none;
+        width: fit-content;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        & li{
+            @include flex-element ();
+            background-color: pink;
+            width: 100vw;
+            height: 100%;
+            transform : translateY(30px);
+            opacity: 0;
+            transition: all 0.3s ease-in;
+        }
+    }
+}
+
+.test{
+    height : 1000px;
+    @include flex-element();  
 }
