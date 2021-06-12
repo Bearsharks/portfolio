@@ -1,57 +1,79 @@
 import './Home.scss';
-import { useState, useEffect, useRef } from "react"
-import { INTRO, ARTICLE } from "./constants/constants"
+import { useEffect, useRef } from "react"
 
 function Home() {
+    const wrapperRef = useRef(null);
+    const introRef = useRef(null);
     const articleRef = useRef(null);
-    const [curFocusedContent, setCurFocusedContent] = useState(INTRO);
+    const testRef = useRef(null);
+    let lastReq = null;
+    let prevScrollTop = 0;
+    let isViewportChagned = false;
     const onScrollHandler = (e) => {
-        if (e.deltaY > 0) {//아래로
-            if (curFocusedContent === INTRO) {
-                setCurFocusedContent(ARTICLE);
-            }
-        } else if (e.deltaY < 0) {//위로
-            if (curFocusedContent === ARTICLE) {
-                if (articleRef.current.scrollTop === 0) {
-                    setCurFocusedContent(INTRO);
-                }
-
-            }
+        setCameraDirty(e);
+    }
+    const setCameraDirty = (e) => {
+        if (e.type === "resize") isViewportChagned = true;
+        else if (prevScrollTop !== wrapperRef.current.scrollTop) {
+            isViewportChagned = true;
+            prevScrollTop = wrapperRef.current.scrollTop;
         }
     }
-    let curFocusClassName = "";
-    switch (curFocusedContent) {
-        case INTRO:
-            curFocusClassName = "flex-wrapper--focus-intro";
-            break;
-        case ARTICLE:
-            curFocusClassName = "flex-wrapper--focus-article";
-            break;
-        default:
-            curFocusClassName = "";
+
+    const renderFrame = () => {
+        lastReq = requestAnimationFrame(renderFrame.bind(this));
+        if (!isViewportChagned) return;
+        isViewportChagned = false;
+        if (wrapperRef.current.scrollTop > introRef.current.clientHeight) {
+            let articleScrollTop = wrapperRef.current.scrollTop - introRef.current.clientHeight;
+            let viewportSize = wrapperRef.current.clientHeight;
+            //article.Height == 전체 높이 - article.offsetTop
+            let maxScrollTop = (articleRef.current.clientHeight - viewportSize);
+            let frameProgress = articleScrollTop / maxScrollTop;
+            testRef.current.style.transform = `translate(${-frameProgress * (testRef.current.clientWidth - articleRef.current.clientWidth)}px, ${articleScrollTop}px)`;
+        } else {
+            testRef.current.style.transform = 'translate(0,0)';
+        }
     }
+
     useEffect(() => {
-        //window.addEventListener('scroll', onScrollHandler);
+        wrapperRef.current.addEventListener('scroll', onScrollHandler);
+        window.addEventListener('resize', setCameraDirty);
+        renderFrame();
         return () => {
-            //window.removeEventListener('scroll', onScrollHandler);
+            window.removeEventListener('resize', onScrollHandler);
+            if (lastReq) cancelAnimationFrame(lastReq);
         }
     }, []);
 
     return (
         <div
-            className={"flex-wrapper " + curFocusClassName}>
+            ref={wrapperRef}
+            onScroll={onScrollHandler}
+            className="flex-wrapper">
             <div
-                onWheel={onScrollHandler}
+                ref={introRef}
                 className="flex-wrapper__intro"
             >
                 home
             </div>
             <div
-                onWheel={onScrollHandler}
-                className="flex-wrapper__article"
                 ref={articleRef}
+                className="flex-wrapper__article"
+
             >
-                <div className="test">detail</div>
+                <div ref={testRef} className="test">
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                    detail detail detail detail detail detail detail detail
+                </div>
             </div>
         </div>
 
