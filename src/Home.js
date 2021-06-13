@@ -6,61 +6,66 @@ function Home() {
     const introRef = useRef(null);
     const articleRef = useRef(null);
     const articleFrameRef = useRef(null);
+    let prevTransform = "";
     let lastReq = null;
-    let prevScrollTop = 0;
-    let isViewportChagned = false;
     const onScrollHandler = (e) => {
-        setCameraDirty(e);
     }
     const setCameraDirty = (e) => {
-        if (e.type === "resize") isViewportChagned = true;
-        else if (prevScrollTop !== wrapperRef.current.scrollTop) {
-            isViewportChagned = true;
-            prevScrollTop = wrapperRef.current.scrollTop;
-        }
     }
 
     const renderFrame = () => {
         lastReq = requestAnimationFrame(renderFrame.bind(this));
-        if (!isViewportChagned) return;
-        isViewportChagned = false;
-        let frameProgress = 0;
-        if (wrapperRef.current.scrollTop > introRef.current.clientHeight) {
-            let articleScrollTop = wrapperRef.current.scrollTop - introRef.current.clientHeight;
-            let viewportSize = wrapperRef.current.clientHeight;
-            //article.Height == 전체 높이 - article.offsetTop
-            let maxScrollTop = (articleRef.current.clientHeight - viewportSize);
-            frameProgress = Math.min(0.9999, articleScrollTop / maxScrollTop);
-            let curTop = Math.min(maxScrollTop, articleScrollTop);
-            articleFrameRef.current.style.transform = `translate(${-frameProgress * (articleFrameRef.current.clientWidth - articleRef.current.clientWidth)}px, ${curTop}px)`;
-        } else {
-            articleFrameRef.current.style.transform = 'translate(0,0)';
+        let curTransForm = 'translate(0,0)';
+        if (wrapperRef.current.scrollTop < introRef.current.clientHeight) {
+            curTransForm = 'translate(0,0)';
+            if (curTransForm !== articleFrameRef.current.style.transform) articleFrameRef.current.style.transform = curTransForm;
+            return;
         }
+        let articleScrollTop = wrapperRef.current.scrollTop - introRef.current.clientHeight;
+        let viewportSize = wrapperRef.current.clientHeight;
+        let maxScrollTop = (articleRef.current.clientHeight - viewportSize);
+        let frameProgress = Math.max(0, Math.min(0.9999, articleScrollTop / maxScrollTop));
+        let curTop = Math.min(maxScrollTop, articleScrollTop);
+        let maxViewportPosX = articleFrameRef.current.clientWidth - articleRef.current.clientWidth;
+        curTransForm = `translate(${-frameProgress * maxViewportPosX}px, ${curTop}px)`;
+
+        if (curTransForm === articleFrameRef.current.style.transform) return;
+        articleFrameRef.current.style.transform = curTransForm;
+
+
         //10% 이상 보이면 스타일 바꿔줌 
         let childCnt = articleFrameRef.current.children[0].childElementCount;
         let eleSize = 1 / (childCnt - 1);
         let first = Math.floor(frameProgress / eleSize);
         let firstShownSizePer = (eleSize - (frameProgress % eleSize)) / eleSize;
-
+        let firstStyle = articleFrameRef.current.children[0].children[first].style;
         if (firstShownSizePer > 0.15) {
-            articleFrameRef.current.children[0].children[first].style.opacity = 1;
-            articleFrameRef.current.children[0].children[first].style.transform = `translateY(0)`;
+            if (!firstStyle.opacity || !firstStyle.transform) {
+                firstStyle.opacity = 1;
+                firstStyle.transform = `translateY(0)`;
+            }
         }
         else {
-            articleFrameRef.current.children[0].children[first].style.opacity = "";
-            articleFrameRef.current.children[0].children[first].style.transform = "";
+            if (firstStyle.opacity && firstStyle.transform) {
+                firstStyle.opacity = "";
+                firstStyle.transform = "";
+            }
         }
 
-        let second = Math.floor((frameProgress + eleSize) / eleSize);
-        let secondShownSize = (frameProgress % eleSize) / eleSize;
-
-        if (secondShownSize > 0.15) {
-            articleFrameRef.current.children[0].children[second].style.opacity = 1;
-            articleFrameRef.current.children[0].children[second].style.transform = `translateY(0)`;
+        let second = first + 1;
+        let secondShownSizePer = 1 - firstShownSizePer;
+        let secondStyle = articleFrameRef.current.children[0].children[second].style;
+        if (secondShownSizePer > 0.15) {
+            if (!secondStyle.opacity || !secondStyle.transform) {
+                secondStyle.opacity = 1;
+                secondStyle.transform = `translateY(0)`;
+            }
         }
         else {
-            articleFrameRef.current.children[0].children[second].style.opacity = "";
-            articleFrameRef.current.children[0].children[second].style.transform = "";
+            if (secondStyle.opacity && secondStyle.transform) {
+                secondStyle.opacity = "";
+                secondStyle.transform = "";
+            }
         }
     }
 
@@ -69,7 +74,7 @@ function Home() {
         window.addEventListener('resize', setCameraDirty);
         renderFrame();
         return () => {
-            window.removeEventListener('resize', onScrollHandler);
+            window.removeEventListener('resize', setCameraDirty);
             if (lastReq) cancelAnimationFrame(lastReq);
         }
     }, []);

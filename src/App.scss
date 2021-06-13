@@ -17,6 +17,9 @@ header{
     height: 50px;
     width: 100%;
 }
+.home-btn{
+    z-index: 100;
+}
 main {
     height: calc(100% - 50px);
 }

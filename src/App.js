@@ -8,7 +8,9 @@ function App(props) {
 		<div className="App">
 			<header>
 				<div className="header-wrapper">
-					<div>home버튼</div>
+					<div className="home-btn">
+						home버튼
+					</div>
 					<HamburgerBtn></HamburgerBtn>
 				</div>
 			</header>
