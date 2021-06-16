@@ -13,7 +13,9 @@ function Home() {
     }
 
     const renderFrame = () => {
+        lastReq = requestAnimationFrame(renderFrame.bind(this));
         let curTransForm = 'translate(0,0)';
+        if (!wrapperRef.current) return;
         if (wrapperRef.current.scrollTop < introRef.current.clientHeight) {
             curTransForm = 'translate(0,0)';
             if (curTransForm !== articleFrameRef.current.style.transform) articleFrameRef.current.style.transform = curTransForm;
@@ -65,8 +67,6 @@ function Home() {
                 secondStyle.transform = "";
             }
         }
-
-        lastReq = requestAnimationFrame(renderFrame.bind(this));
     }
 
     useEffect(() => {
