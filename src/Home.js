@@ -6,15 +6,13 @@ function Home() {
     const introRef = useRef(null);
     const articleRef = useRef(null);
     const articleFrameRef = useRef(null);
-    let prevTransform = "";
-    let lastReq = null;
+    let lastReq = 0;
     const onScrollHandler = (e) => {
     }
     const setCameraDirty = (e) => {
     }
 
     const renderFrame = () => {
-        lastReq = requestAnimationFrame(renderFrame.bind(this));
         let curTransForm = 'translate(0,0)';
         if (wrapperRef.current.scrollTop < introRef.current.clientHeight) {
             curTransForm = 'translate(0,0)';
@@ -67,6 +65,8 @@ function Home() {
                 secondStyle.transform = "";
             }
         }
+
+        lastReq = requestAnimationFrame(renderFrame.bind(this));
     }
 
     useEffect(() => {
@@ -74,6 +74,7 @@ function Home() {
         window.addEventListener('resize', setCameraDirty);
         renderFrame();
         return () => {
+            debugger;
             window.removeEventListener('resize', setCameraDirty);
             if (lastReq) cancelAnimationFrame(lastReq);
         }
@@ -88,7 +89,7 @@ function Home() {
                 ref={introRef}
                 className="flex-wrapper__intro"
             >
-                home
+                스크롤을 아래로 내려주세요
             </div>
             <div
                 ref={articleRef}
@@ -101,8 +102,6 @@ function Home() {
                         <li>c</li>
                         <li>d</li>
                         <li>e</li>
-                        <li>f</li>
-                        <li>g</li>
                     </ul>
                 </div>
             </div>
