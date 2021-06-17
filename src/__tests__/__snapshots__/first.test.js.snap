@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`처음 테스트 renders component correctly 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <header>
+      <div
+        class="header-wrapper"
+      >
+        <div
+          class="home-btn"
+        >
+          home버튼
+        </div>
+        <div
+          class="hamburger-btn"
+        >
+          <div
+            class="hamburger"
+          />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div
+        class="navigation navigation--inactive"
+      >
+        <a
+          href="/portfolio/home"
+        >
+          Home
+        </a>
+        <a
+          href="/portfolio/about"
+        >
+          About
+        </a>
+        <a
+          href="/portfolio/works"
+        >
+          Works
+        </a>
+        <a
+          href="/portfolio/contact"
+        >
+          Contact
+        </a>
+      </div>
+    </main>
+  </div>
+</div>
+`;
