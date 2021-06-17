@@ -11,14 +11,16 @@ function Home() {
     }
     const setCameraDirty = (e) => {
     }
-
-    const renderFrame = () => {
-        lastReq = requestAnimationFrame(renderFrame.bind(this));
-        let curTransForm = 'translate(0,0)';
-        if (!wrapperRef.current) return;
+    const changeStyle = (styleElement, styleName, attribute) => {
+        let isSame = attribute == styleElement[styleName];
+        if (!isSame) {
+            styleElement[styleName] = attribute;
+        }
+        return isSame;
+    }
+    const moveFrame = () => {
         if (wrapperRef.current.scrollTop < introRef.current.clientHeight) {
-            curTransForm = 'translate(0,0)';
-            if (curTransForm !== articleFrameRef.current.style.transform) articleFrameRef.current.style.transform = curTransForm;
+            changeStyle(articleFrameRef.current.style, "transform", "translate(0px, 0px)");
             return;
         }
         let articleScrollTop = wrapperRef.current.scrollTop - introRef.current.clientHeight;
@@ -27,11 +29,9 @@ function Home() {
         let frameProgress = Math.max(0, Math.min(0.9999, articleScrollTop / maxScrollTop));
         let curTop = Math.min(maxScrollTop, articleScrollTop);
         let maxViewportPosX = articleFrameRef.current.clientWidth - articleRef.current.clientWidth;
-        curTransForm = `translate(${-frameProgress * maxViewportPosX}px, ${curTop}px)`;
-
-        if (curTransForm === articleFrameRef.current.style.transform) return;
-        articleFrameRef.current.style.transform = curTransForm;
-
+        let isSame = changeStyle(articleFrameRef.current.style, "transform",
+            `translate(${(-frameProgress * maxViewportPosX).toFixed(0)}px, ${curTop.toFixed(0)}px)`);
+        if (isSame) return;
 
         //10% 이상 보이면 스타일 바꿔줌 
         let childCnt = articleFrameRef.current.children[0].childElementCount;
@@ -40,33 +40,29 @@ function Home() {
         let firstShownSizePer = (eleSize - (frameProgress % eleSize)) / eleSize;
         let firstStyle = articleFrameRef.current.children[0].children[first].style;
         if (firstShownSizePer > 0.15) {
-            if (!firstStyle.opacity || !firstStyle.transform) {
-                firstStyle.opacity = 1;
-                firstStyle.transform = `translateY(0)`;
-            }
+            changeStyle(firstStyle, "opacity", "1");
+            changeStyle(firstStyle, "transform", `translateY(0px)`);
         }
         else {
-            if (firstStyle.opacity && firstStyle.transform) {
-                firstStyle.opacity = "";
-                firstStyle.transform = "";
-            }
+            changeStyle(firstStyle, "opacity", "");
+            changeStyle(firstStyle, "transform", "");
         }
 
         let second = first + 1;
         let secondShownSizePer = 1 - firstShownSizePer;
         let secondStyle = articleFrameRef.current.children[0].children[second].style;
         if (secondShownSizePer > 0.15) {
-            if (!secondStyle.opacity || !secondStyle.transform) {
-                secondStyle.opacity = 1;
-                secondStyle.transform = `translateY(0)`;
-            }
+            changeStyle(secondStyle, "opacity", "1");
+            changeStyle(secondStyle, "transform", `translateY(0px)`);
         }
         else {
-            if (secondStyle.opacity && secondStyle.transform) {
-                secondStyle.opacity = "";
-                secondStyle.transform = "";
-            }
+            changeStyle(secondStyle, "opacity", "");
+            changeStyle(secondStyle, "transform", "");
         }
+    }
+    const renderFrame = () => {
+        if (wrapperRef.current) moveFrame();
+        lastReq = requestAnimationFrame(renderFrame.bind(this));
     }
 
     useEffect(() => {
@@ -74,7 +70,6 @@ function Home() {
         window.addEventListener('resize', setCameraDirty);
         renderFrame();
         return () => {
-            debugger;
             window.removeEventListener('resize', setCameraDirty);
             if (lastReq) cancelAnimationFrame(lastReq);
         }
