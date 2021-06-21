@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { RecoilRoot } from 'recoil';
 import './App.scss';
 import { BrowserRouter, Route } from "react-router-dom";
 import MainContents from "./MainContents"
@@ -19,23 +18,21 @@ function App(props) {
 	}, [])
 
 	return (
-		<RecoilRoot>
-			<div className="App">
-				<header>
-					<div className="header-wrapper">
-						<div className="home-btn">
-							home버튼
-						</div>
-						<HamburgerBtn></HamburgerBtn>
+		<div className="App">
+			<header>
+				<div className="header-wrapper">
+					<div className="home-btn">
+						home버튼
 					</div>
-				</header>
-				<main>
-					<BrowserRouter>
-						<Route component={MainContents} />
-					</BrowserRouter>
-				</main>
-			</div >
-		</RecoilRoot>
+					<HamburgerBtn></HamburgerBtn>
+				</div>
+			</header>
+			<main>
+				<BrowserRouter>
+					<Route component={MainContents} />
+				</BrowserRouter>
+			</main>
+		</div >
 	);
 }
 
