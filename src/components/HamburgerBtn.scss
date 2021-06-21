@@ -3,13 +3,14 @@
     height: 100%;
     display: flex;
     align-items: center;
-    background-color: rgba(0,0,0,0);
-    border: none;
+    justify-content: center;
+    border : 1px solid white;
+    margin : 1px;
 }
 
 @mixin hamburger-line (){
-    width: 25px;
-    height: 2px;
+    width: 35px;
+    height: 3px;
     background: #fff;
     transition : all 0.5s ease;
 }
@@ -26,13 +27,13 @@
     &:after{
         @include hamburger-pseudo ();
         @include hamburger-line();
-        top : -10px;
+        top : -12px;
     }
     
     &:before {
         @include hamburger-pseudo ();
         @include hamburger-line();
-        top : 8px;
+        top : 10px;
     } 
 }
 

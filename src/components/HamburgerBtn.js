@@ -10,14 +10,14 @@ function HamburgerBtn(props) {
         setActive((isActive) ? false : true);
     }
     return (
-        <button
+        <div
             className={`hamburger-btn`}
             onClick={togleActive}
         >
             <div
                 className={(isActive) ? `hamburger hamburger--active` : `hamburger`}
             />
-        </button>
+        </div>
 
     );
 }
