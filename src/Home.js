@@ -6,7 +6,7 @@ function Home() {
     const introRef = useRef(null);
     const articleRef = useRef(null);
     const articleFrameRef = useRef(null);
-    let lastReq = 0;
+    let lastReq = useRef(null);
     const onScrollHandler = (e) => {
     }
     const setCameraDirty = (e) => {
@@ -68,10 +68,10 @@ function Home() {
     useEffect(() => {
         wrapperRef.current.addEventListener('scroll', onScrollHandler);
         window.addEventListener('resize', setCameraDirty);
-        renderFrame();
+        lastReq.current = requestAnimationFrame(renderFrame);
         return () => {
             window.removeEventListener('resize', setCameraDirty);
-            if (lastReq) cancelAnimationFrame(lastReq);
+            if (lastReq.current) cancelAnimationFrame(lastReq.current);
         }
     }, []);
 
