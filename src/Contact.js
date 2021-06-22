@@ -41,16 +41,17 @@ function Contact() {
         wrapper.current.appendChild(script);
     }, []);
     return (
-        <div ref={wrapper}>
-            Contact<br />
+        <div className={`wrapper`} ref={wrapper}>
+            <h1>Contact</h1>
             <div className={`message-form`}>
                 <label>Name : </label>
                 <input type="text" onChange={e => setName(e.target.value)} value={name} />
-                <label>e-mail : </label>
+                <label>Email : </label>
                 <input type="text" onChange={e => setEmail(e.target.value)} value={email} />
-                <label>message : </label>
+                <label>Message : </label>
                 <textarea name="message" cols="40" rows="10" aria-invalid="false" onChange={e => setMessage(e.target.value)} value={message} />
-                <button onClick={onSubmit}>제출</button>
+                <br />
+                <button onClick={onSubmit}>SUBMIT</button>
             </div>
             <br />
             {response && <label>Output:{response}</label>}

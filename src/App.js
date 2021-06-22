@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss';
 import { BrowserRouter, Route } from "react-router-dom";
 import MainContents from "./MainContents"
@@ -6,6 +6,7 @@ import HamburgerBtn from "./components/HamburgerBtn"
 import { RECAPTCHA_CLIENT_KEY } from './constants/constants';
 
 function App(props) {
+	const [isHeaderHide, setHeaderHide] = useState(false);
 	useEffect(() => {
 		const isScriptExist = document.getElementById("recaptcha");
 		if (!isScriptExist) {
@@ -16,11 +17,18 @@ function App(props) {
 			document.body.appendChild(script);
 		}
 	}, [])
-
+	const onWheelHandler = (e) => {
+		debugger;
+		if (e.deltaY < 0 && isHeaderHide !== false) {
+			setHeaderHide(false);
+		} else if (e.deltaY > 0 && isHeaderHide !== true) {
+			setHeaderHide(true);
+		}
+	}
 	return (
-		<div className="App">
+		<div className="App" onWheel={onWheelHandler}>
 			<header>
-				<div className="header-wrapper">
+				<div className={"header-wrapper" + (isHeaderHide ? " header-wrapper--hide" : "")} >
 					<div className="home-btn">
 						home버튼
 					</div>

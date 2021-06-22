@@ -1,28 +1,32 @@
 
 .App{
     overflow:hidden;
-    height: calc(100vh - 20px);
-    padding : 0 10px;
+    height: calc(100vh);
 }
 
+
 header{
-    height: 60px;
-    padding : 0 25px;
+    height: 0px;
+    width: 100%;
 }
 
 .header-wrapper {
     display: flex;
-    float:right;
     align-items: center;
     justify-content: space-between;
     height: 60px;
     width: 100%;
+    transition: transform 0.4s ease;
+}
+.header-wrapper--hide {
+    transform: translateY(-60px);
+    transition: transform 0.4s ease;
 }
 .home-btn{
     z-index: 100;
 }
 main {
-    height: calc(100% - 50px);
+    height: calc(100%);
 }
 
 .grecaptcha-badge{
