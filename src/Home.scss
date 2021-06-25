@@ -1,4 +1,4 @@
-
+@import "global.scss";
 
 @mixin flex-element (){
     width: 100%;
@@ -8,7 +8,7 @@
 }
 
 .flex-wrapper {
-    font-size: 4em;
+    @include blueblack();
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
@@ -40,36 +40,79 @@
 
 .flex-wrapper__intro {
     @include flex-element();  
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     height:100%; 
-    background-color :aqua;  
+    font-weight: bold;
+}
+.intro__header1{    
+    font-family: 'Open Sans';
+    font-size: 6vw;
+    padding: 20px;
+    border-bottom: 1px solid #f48600;
+}
+.intro__header2 {
+    margin:0;
+    font-size: 8vw;
 }
 
-.flex-wrapper-article {
+.intro__message{        
+    font-size: 3vw;
+    width: 80vw;
+    margin: 0px auto;
+}
+.intro__message--small{    
+    font-size: 2.2vw;
+}
+
+@keyframes flow {
+    0% {
+        transform: translateY(-10px);
+    }
+    90% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.intro__button{
+    transform: translateY(-10px);
+    &:hover{
+        animation-duration: 1.5s;
+        animation-name: flow;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        cursor: pointer;
+    }
+}
+
+.flex-wrapper__article {
     @include flex-element();  
-    height:5000px;    
-    background-color: greenyellow;
+    @include reverse_blueblack();
+    height:100vh; 
 }
 .article-frame{
+    @include reverse_blueblack();
     width: fit-content;
-    height:calc(100vh - 50px); 
-    background-color: rgb(220, 233, 200);
-    
+    height:calc(100vh);     
     & ul{
         display:flex;
         list-style: none;
         width: fit-content;
+        align-items: center;
         margin: 0px;
         padding: 0px;
         height: 100%;
         & li{
             @include flex-element ();
-            border: white 1px solid;
-            background-color: pink;
             width: 100vw;
-            height: 100%;
+            height: 95%;
             transform : translateY(30px);
             opacity: 0;
-            transition: all 0.3s ease-in;
+            transition: all 0.3s linear;
         }
     }
 }

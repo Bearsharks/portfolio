@@ -1,11 +1,13 @@
 import './Home.scss';
 import { useEffect, useRef } from "react"
-
+import Article from "./components/Article"
+import { ReactComponent as Icon } from './expand.svg';
 function Home() {
     const wrapperRef = useRef(null);
     const introRef = useRef(null);
     const articleRef = useRef(null);
     const articleFrameRef = useRef(null);
+    const scrollSpeed = 20;
     let lastReq = useRef(null);
     const onScrollHandler = (e) => {
     }
@@ -47,11 +49,11 @@ function Home() {
             changeStyle(firstStyle, "opacity", "");
             changeStyle(firstStyle, "transform", "");
         }
-
+        if (childCnt <= 1) return;
         let second = first + 1;
         let secondShownSizePer = 1 - firstShownSizePer;
         let secondStyle = articleFrameRef.current.children[0].children[second].style;
-        if (secondShownSizePer > 0.15) {
+        if (secondShownSizePer > 0.20) {
             changeStyle(secondStyle, "opacity", "1");
             changeStyle(secondStyle, "transform", `translateY(0px)`);
         }
@@ -61,12 +63,19 @@ function Home() {
         }
     }
     const renderFrame = () => {
+        if (wrapperRef.current.cnt < scrollSpeed) {
+            wrapperRef.current.scrollTop += window.innerHeight / scrollSpeed;
+            wrapperRef.current.cnt++;
+        }
         if (wrapperRef.current) moveFrame();
         lastReq = requestAnimationFrame(renderFrame.bind(this));
     }
 
     useEffect(() => {
         wrapperRef.current.addEventListener('scroll', onScrollHandler);
+        let childCnt = articleFrameRef.current.children[0].childElementCount;
+
+        articleRef.current.style.height = childCnt * window.innerHeight + 'px';
         window.addEventListener('resize', setCameraDirty);
         lastReq.current = requestAnimationFrame(renderFrame);
         return () => {
@@ -74,29 +83,42 @@ function Home() {
             if (lastReq.current) cancelAnimationFrame(lastReq.current);
         }
     }, []);
-
+    const introBtnClickHandler = (e) => {
+        debugger;
+        wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (window.innerHeight / scrollSpeed));
+    }
     return (
         <div
             ref={wrapperRef}
             onScroll={onScrollHandler}
-            className="flex-wrapper">
+            className="flex-wrapper blueblack">
             <div
                 ref={introRef}
                 className="flex-wrapper__intro"
             >
-                스크롤을 아래로 내려주세요
+                <div>
+                    <br /><br /><br />
+                    <div className={`intro__header1`}>Write code for</div>
+                    <div className={`intro__header2`}>humans!</div>
+                </div>
+                <div className={`intro__message`}>
+                    <div>안녕하세요, 웹 개발자 조성빈입니다.</div>
+                    <div className={`intro__message--small`}>개발을 통해 더 나은 가치를 사람들에게 전합니다.</div>
+                </div>
+                <div className={`intro__button`} onClick={introBtnClickHandler}>
+                    <Icon width="150" height="150" fill="white" />
+                </div>
+
             </div>
             <div
                 ref={articleRef}
-                className="flex-wrapper-article"
+                className="flex-wrapper__article"
             >
                 <div ref={articleFrameRef} className="article-frame">
                     <ul>
-                        <li>a</li>
-                        <li>b</li>
-                        <li>c</li>
-                        <li>d</li>
-                        <li>e</li>
+                        <li style={{ opacity: 1 }}><Article></Article></li>
+                        <li><Article></Article></li>
+                        <li><Article></Article></li>
                     </ul>
                 </div>
             </div>

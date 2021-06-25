@@ -1,0 +1,20 @@
+@import "../global.scss";
+
+.article-wrapper{
+    @include reverse-blueblack();
+    display: flex;
+    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+}
+.article-wrapper__tags{
+    @include blueblack();
+    height: 100%;
+    width:50%;
+
+}
+.article-wrapper__contents{
+    @include reverse-blueblack();
+    height: 100%;
+    width:50%;
+}

@@ -5,8 +5,9 @@
 }
 .wrapper{
     padding: 0 calc(100vw / 20) 0 calc(100vw / 15);
-    max-width: 1000px;
+    max-width: 1200px;
     min-width: 200px;
+    margin : 0 auto;
     height: 100%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -30,7 +31,7 @@
         display:none;
     }
 }
-h1{    
+.wrapper__header{    
     font-family: 'Open Sans';
     font-size: 50px;
     margin: 50px 15px 25px 5px;

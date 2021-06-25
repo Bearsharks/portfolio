@@ -42,7 +42,7 @@ function Contact() {
     }, []);
     return (
         <div className={`wrapper`} ref={wrapper}>
-            <h1>Contact</h1>
+            <h1 className={`wrapper__header`}>Contact</h1>
             <div className={`message-form`}>
                 <label>Name : </label>
                 <input type="text" onChange={e => setName(e.target.value)} value={name} />
