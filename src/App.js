@@ -18,9 +18,9 @@ function App(props) {
 		}
 	}, [])
 	const onWheelHandler = (e) => {
-		if (e.deltaY < 0 && isHeaderHide !== false) {
+		if (e.deltaY < 0 && isHeaderHide === true) {
 			setHeaderHide(false);
-		} else if (e.deltaY > 0 && isHeaderHide !== true) {
+		} else if (e.deltaY > 0 && isHeaderHide === false) {
 			setHeaderHide(true);
 		}
 	}

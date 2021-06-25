@@ -6,15 +6,30 @@
     height: 100%;
     width: 95%;
     margin: 0 auto;
+    align-items: center;
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    	// Tablet
+    }
 }
 .article-wrapper__tags{
     @include blueblack();
     height: 100%;
     width:50%;
+    @media screen and (max-width: 768px){
+        height: 50%;
+        width:90%;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
 
 }
 .article-wrapper__contents{
     @include reverse-blueblack();
     height: 100%;
     width:50%;
+    @media screen and (max-width: 768px){
+        height: 50%;
+        width:90%;
+        border: 1px solid;
+    }
 }

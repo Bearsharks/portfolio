@@ -1,11 +1,6 @@
 @import "global.scss";
 
-@mixin flex-element (){
-    width: 100%;
-    flex-grow: 0;
-    flex-shrink : 0;
-    flex-basis :auto;
-}
+
 
 .flex-wrapper {
     @include blueblack();
@@ -23,7 +18,7 @@
     
     /* background of the scrollbar except button or resizer */
     &::-webkit-scrollbar-track {
-        //background-color:#f4f4f4;
+        background-color:#f4f4f4;
     }
     &::-webkit-scrollbar-thumb:hover {
         background-color:#939397;
@@ -63,7 +58,7 @@
     margin: 0px auto;
 }
 .intro__message--small{    
-    font-size: 2.2vw;
+    font-size: 2.4vw;
 }
 
 @keyframes flow {
@@ -110,9 +105,9 @@
             @include flex-element ();
             width: 100vw;
             height: 95%;
-            transform : translateY(30px);
-            opacity: 0;
-            transition: all 0.3s linear;
+            transform : translateY(20px);
+            opacity: 1;
+            transition: all 0.5s linear;
         }
     }
 }

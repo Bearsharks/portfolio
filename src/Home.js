@@ -7,7 +7,7 @@ function Home() {
     const introRef = useRef(null);
     const articleRef = useRef(null);
     const articleFrameRef = useRef(null);
-    const scrollSpeed = 20;
+    const scrollSpeed = 30;
     let lastReq = useRef(null);
     const onScrollHandler = (e) => {
     }
@@ -46,7 +46,7 @@ function Home() {
             changeStyle(firstStyle, "transform", `translateY(0px)`);
         }
         else {
-            changeStyle(firstStyle, "opacity", "");
+            changeStyle(firstStyle, "opacity", "0");
             changeStyle(firstStyle, "transform", "");
         }
         if (childCnt <= 1) return;
@@ -58,16 +58,19 @@ function Home() {
             changeStyle(secondStyle, "transform", `translateY(0px)`);
         }
         else {
-            changeStyle(secondStyle, "opacity", "");
+            changeStyle(secondStyle, "opacity", "0");
             changeStyle(secondStyle, "transform", "");
         }
     }
     const renderFrame = () => {
-        if (wrapperRef.current.cnt < scrollSpeed) {
-            wrapperRef.current.scrollTop += window.innerHeight / scrollSpeed;
-            wrapperRef.current.cnt++;
+
+        if (wrapperRef.current) {
+            if (wrapperRef.current.cnt < scrollSpeed) {
+                wrapperRef.current.scrollTop += window.innerHeight / scrollSpeed;
+                wrapperRef.current.cnt++;
+            }
+            moveFrame();
         }
-        if (wrapperRef.current) moveFrame();
         lastReq = requestAnimationFrame(renderFrame.bind(this));
     }
 
@@ -87,6 +90,33 @@ function Home() {
         debugger;
         wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (window.innerHeight / scrollSpeed));
     }
+
+    const articles = [
+        {
+            tags: ['#효율지향적', '#창의적인', '#기본에충실'],
+            contents: "hi",
+            linkInfo: {
+                alt: "hi",
+                link: "/portfolio/about"
+            }
+        },
+        {
+            tags: ['#실습을 통해 배우기', "#비교분석", "#테스트"],
+            contents: "hi",
+            linkInfo: {
+                alt: "hi",
+                link: "/portfolio/project"
+            }
+        },
+        {
+            tags: ['#역지사지', "#예의와배려"],
+            contents: "hi",
+            linkInfo: {
+                alt: "hi",
+                link: "/portfolio/contact"
+            }
+        },
+    ]
     return (
         <div
             ref={wrapperRef}
@@ -103,7 +133,11 @@ function Home() {
                 </div>
                 <div className={`intro__message`}>
                     <div>안녕하세요, 웹 개발자 조성빈입니다.</div>
-                    <div className={`intro__message--small`}>개발을 통해 더 나은 가치를 사람들에게 전합니다.</div>
+                    <div
+                        className={`intro__message--small`}
+                    >
+                        개발로써 사람들에게 더 나은 가치를 전합니다.
+                    </div>
                 </div>
                 <div className={`intro__button`} onClick={introBtnClickHandler}>
                     <Icon width="150" height="150" fill="white" />
@@ -116,9 +150,19 @@ function Home() {
             >
                 <div ref={articleFrameRef} className="article-frame">
                     <ul>
-                        <li style={{ opacity: 1 }}><Article></Article></li>
-                        <li><Article></Article></li>
-                        <li><Article></Article></li>
+                        {
+                            articles.map((el, index) => {
+                                return (
+                                    <li key={index}>
+                                        <Article
+                                            tags={el.tags}
+                                            contents={el.contents}
+                                            linkInfo={el.linkInfo}>
+                                        </Article>
+                                    </li>
+                                );
+                            })
+                        }
                     </ul>
                 </div>
             </div>
