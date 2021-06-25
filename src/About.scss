@@ -1,0 +1,50 @@
+@import "global.scss";
+
+.about_wrapper{
+    @include flex-wrapper();
+    width: 100vw;
+}
+
+.about-box{          
+    @include flex-element();
+    height:100vh;    
+}
+
+.about-box--blueblack{    
+    @include blueblack();      
+}
+
+.about-box--reverse-blueblack{    
+    @include reverse_blueblack();
+}
+
+.skill-box-wrapper{
+    width: 100vw;
+    height : 100vh;
+}
+
+.skill-box{
+    position: relative;
+
+    width: 100vw;
+    height : 100vh;
+}
+
+.skill-box--front{    
+    background-color: aqua; 
+    top:-100vh;
+    transform: rotateY(0deg);
+}
+
+.skill-box--back{    
+    background-color: pink;     
+    transform: rotateY(180deg);     
+}
+.testbtn{
+    position: fixed;
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+    top : 50vh;
+    z-index: 1000;
+}
