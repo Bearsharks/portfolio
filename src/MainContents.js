@@ -25,7 +25,7 @@ function MainContents(props) {
             <Mynav>
                 <NavLink to={`/portfolio/home`} activeClassName={'linkActive'}>Home</NavLink>
                 <NavLink to={`/portfolio/about`} activeClassName={'linkActive'}>About</NavLink>
-                <NavLink to={`/portfolio/works`} activeClassName={'linkActive'}>Works</NavLink>
+                <NavLink to={`/portfolio/projects`} activeClassName={'linkActive'}>Projects</NavLink>
                 <NavLink to={`/portfolio/contact`} activeClassName={'linkActive'}>Contact</NavLink>
             </Mynav>
             <Switch>
@@ -35,7 +35,7 @@ function MainContents(props) {
                 <Route path={`/portfolio/home`}>
                     <Home></Home>
                 </Route>
-                <Route path={`/portfolio/works`}>
+                <Route path={`/portfolio/projects`}>
                     <Experience></Experience>
                 </Route>
                 <Route path={`/portfolio/about`} component={About}>
