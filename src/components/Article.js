@@ -5,7 +5,7 @@ function Article(props) {
         <div className={`article-wrapper`}>
             <div className={`article-wrapper__tags`}>
                 {
-                    props.tags.map(ele => <div>{ele}</div>)
+                    props.tags.map((ele, index) => <div key={index}>{ele}</div>)
                 }
             </div>
             <div className={`article-wrapper__contents`}>

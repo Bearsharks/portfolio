@@ -1,32 +1,67 @@
 import './About.scss';
 import { useState, useRef } from 'react'
+import { ReactComponent as Icon } from './expand.svg';
+
 function About(props) {
     const skillBoxRef = useRef(null);
     const backBoxRef = useRef(null);
-    let prevRot = 0;
+    let prevCeta = 0;
     let canRot = false;
-
-    const onMouseDownHandler = (e) => {
-
-        canRot = true;
-        console.log(canRot);
+    let isRotating = false;
+    const getCeta = (rawceta) => {
+        return ((rawceta % 360) + 360) % 360;
     }
-    const onMouseMoveHandler = (e) => {
-
-        if (canRot) {
-            let curRot = (prevRot + e.movementX / 5);
-            console.log(curRot.toFixed(1));
-            skillBoxRef.current.style.transform = `rotateY(${curRot.toFixed(1)}deg)`;
-            let test = (curRot + 90) % 360;
-            if (test < 0) test += 360;
-            if (test > 180) {
-                backBoxRef.current.style.zIndex = '1';
-            } else {
-                backBoxRef.current.style.zIndex = '';
-            }
-            prevRot = curRot;
+    const onMouseDownHandler = (e) => {
+        canRot = true;
+    }
+    const rotate = (curCeta) => {
+        curCeta = getCeta(curCeta);
+        skillBoxRef.current.style.transform = `rotateY(${Math.round(curCeta)}deg)`;
+        if (90 < curCeta && curCeta < 270) {
+            backBoxRef.current.style.zIndex = '1';
+        } else {
+            backBoxRef.current.style.zIndex = '';
         }
     }
+
+    const onMouseMoveHandler = (e) => {
+        if (canRot) {
+            prevCeta = getCeta(prevCeta + e.movementX / 3);
+            rotate(prevCeta);
+        }
+    }
+
+    const rotBtnClickHandler = (d) => {
+        if (isRotating) return;
+        isRotating = true;
+        canRot = false;
+        let ceta = prevCeta;
+        let remain = 0;
+        if (90 > ceta) remain = 180 - ceta;
+        else if (270 > ceta) remain = 360 - ceta;
+        else remain = 360 + 180 - ceta;
+        if (d < 0) remain = 360 - remain;
+        let prevTS = 0;
+
+        const rotateframe = (timestamp) => {
+            let dt = 0;
+            if (prevTS) dt = (timestamp - prevTS);
+            prevTS = timestamp;
+            let dceta = Math.min(dt / 2, remain);
+
+            remain -= dceta;
+            prevCeta = getCeta(prevCeta + d * dceta);
+            if (remain > 0) {
+                requestAnimationFrame(rotateframe);
+            } else {
+                prevCeta = Math.round(prevCeta);
+                isRotating = false;
+            }
+            rotate(prevCeta);
+        }
+        rotateframe(prevTS);
+    }
+
     const onMouseUpHandler = (e) => {
         canRot = false;
     }
@@ -61,6 +96,15 @@ function About(props) {
                     <div className={`skill-box skill-box--front`}>front</div>
                 </div>
 
+            </div>
+            <div className={`skill-btns`} >
+                <div className={`skill-btns__leftbtn`} onClick={() => rotBtnClickHandler(-1)}>
+                    <Icon width="110" height="100" fill='black' />
+                </div>
+
+                <div className={`skill-btns__rightbtn`} onClick={() => rotBtnClickHandler(1)}>
+                    <Icon width="110" height="100" fill='black' />
+                </div>
             </div>
         </div>
     );
