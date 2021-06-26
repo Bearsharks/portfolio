@@ -11,6 +11,9 @@ header{
 }
 
 .header-wrapper {
+    position: fixed;
+    z-index: 100;
+    background: #001A23;
     display: flex;
     align-items: center;
     justify-content: space-between;

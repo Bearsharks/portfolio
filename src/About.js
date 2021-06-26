@@ -83,7 +83,7 @@ function About(props) {
                 <h1>About</h1>
             </div>
             <div
-                className={`about-box about-box--reverse-blueblack`}
+                className={`about-box`}
                 onMouseDown={onMouseDownHandler}
                 onMouseMove={onMouseMoveHandler}
                 onMouseUp={onMouseUpHandler}

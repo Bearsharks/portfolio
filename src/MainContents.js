@@ -4,7 +4,7 @@ import { Route, NavLink, Switch, Redirect, useHistory } from "react-router-dom";
 import Home from "./Home"
 import About from "./About"
 import Contact from "./Contact"
-import Experience from "./Experience"
+import Projects from "./Projects"
 import Mynav from "./components/Navigation"
 
 function MainContents(props) {
@@ -36,7 +36,7 @@ function MainContents(props) {
                     <Home></Home>
                 </Route>
                 <Route path={`/portfolio/projects`}>
-                    <Experience></Experience>
+                    <Projects></Projects>
                 </Route>
                 <Route path={`/portfolio/about`} component={About}>
 

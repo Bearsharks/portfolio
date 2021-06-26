@@ -16,8 +16,6 @@
     @include blueblack();      
 }
 
-.about-box--reverse-blueblack{    
-}
 
 .skill-box-wrapper{
     user-select: none;
@@ -65,8 +63,8 @@
     0% {
         transform: rotateZ(90deg) translateY(0px);
     }
-    30% {
-        transform: rotateZ(90deg) rotateX(-45deg) translateY(10px);
+    50% {
+        transform: rotateZ(90deg) rotateX(-45deg) translateY(15px);
     }
     100% {
         transform: rotateZ(90deg) translateY(0px);
@@ -76,8 +74,8 @@
     0% {
         transform: rotateZ(270deg) translateY(0px);
     }
-    30% {
-        transform: rotateZ(270deg) rotateX(-45deg) translateY(10px);
+    50% {
+        transform: rotateZ(270deg) rotateX(-45deg) translateY(15px);
     }
     100% {
         transform: rotateZ(270deg) translateY(0px);
@@ -86,7 +84,7 @@
 
 @mixin hoverAnimation( $toRight: true ){
     &:hover{
-        animation-duration: 3s;
+        animation-duration: 1.5s;
         @if $toRight {
             animation-name: flowright;
         }@else {
