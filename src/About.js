@@ -8,6 +8,7 @@ function About(props) {
     let prevCeta = 0;
     let canRot = false;
     let isRotating = false;
+    let lastd = 1;
     const getCeta = (rawceta) => {
         return ((rawceta % 360) + 360) % 360;
     }
@@ -27,6 +28,7 @@ function About(props) {
     const onMouseMoveHandler = (e) => {
         if (canRot) {
             prevCeta = getCeta(prevCeta + e.movementX / 3);
+            lastd = e.movementX > 0 ? 1 : -1;
             rotate(prevCeta);
         }
     }
@@ -38,6 +40,7 @@ function About(props) {
         let ceta = prevCeta;
         let remain = 0;
         if (90 > ceta) remain = 180 - ceta;
+        else if (180 > ceta) remain = 360 - ceta;
         else if (270 > ceta) remain = 360 - ceta;
         else remain = 360 + 180 - ceta;
         if (d < 0) remain = 360 - remain;
@@ -64,9 +67,12 @@ function About(props) {
 
     const onMouseUpHandler = (e) => {
         canRot = false;
+        rotBtnClickHandler(lastd);
     }
     const onMouseLeaveHandler = (e) => {
+        if (canRot === false) return;
         canRot = false;
+        rotBtnClickHandler(lastd);
     }
     return (
         <div className={`about_wrapper`}>
