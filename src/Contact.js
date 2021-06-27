@@ -41,7 +41,11 @@ function Contact() {
         wrapper.current.appendChild(script);
     }, []);
     return (
-        <div className={`wrapper`} ref={wrapper}>
+        <div
+            className={`wrapper`}
+            ref={wrapper}
+            onWheel={e => window.onWheelStopPropa(e)}
+        >
             <h1 className={`wrapper__header`}>Contact</h1>
             <div className={`message-form`}>
                 <label>Name : </label>

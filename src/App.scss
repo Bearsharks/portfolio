@@ -25,6 +25,9 @@ header{
     transform: translateY(-60px);
     transition: transform 0.4s ease;
 }
+.header-wrapper--navActive {
+    position: inherit;
+}
 .home-btn{
     z-index: 100;
 }

@@ -4,13 +4,16 @@ import { useRecoilState } from 'recoil';
 import { isNavActive } from '../atoms/isNavActive'
 
 function Navigation({ children }) {
+
     const [isActive, setNavActive] = useRecoilState(isNavActive);
     const inActiveNav = (e) => {
         if (e.target.href) setNavActive(false);
     }
+
     return (
         <div
             onClick={inActiveNav}
+            onWheel={e => window.onWheelStopPropa(e)}
             className={"navigation " + (isActive ? "navigation--active" : "navigation--inactive")}
         >
             {children}
