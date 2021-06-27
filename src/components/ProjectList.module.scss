@@ -1,0 +1,55 @@
+@import "../global.scss";
+
+.project-list{
+    margin-bottom: 5vh;
+}
+.project-list-header{
+    @include flex-wrapper();    
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.project-list__name{
+    @include flex-wrapper();
+    @include flex-element();
+        
+    flex-direction: row;
+    padding: 10px;
+    & div{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.project-list__logo{
+    @include reverse-blueblack();
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+}
+
+.project-list__summary{
+    padding: 20px;
+    text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    @include flex-element();
+    @media screen and (max-width: 768px){
+        width : 100%;
+    }
+}
+.project-list__detail{
+    @include flex-element();
+    text-align: left;
+    width : 100%;
+}
+.project-list__info{
+    padding: 10px;
+    font-size: 0.9em;
+    margin-left: 20px;
+    font-weight: 500;
+    line-height: 25px;
+    margin: 0 50px 0 20px;
+}

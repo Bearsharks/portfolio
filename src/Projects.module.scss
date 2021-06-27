@@ -1,0 +1,44 @@
+@import "./global.scss";
+
+.project-category-name{
+}
+
+.wrapper{
+    height : 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @include blueblack();
+    @include flex-wrapper();
+    @include append_scrollbar();
+}
+.project__header1{
+    @include header1();
+}
+
+.project-lists{
+    @include flex-element();
+    padding: 0 25px;
+}
+
+.personal-project-wrapper{
+    @include reverse-blueblack();
+}
+.sl_subtitle01 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center !important;
+}
+.sl_subtitle02 {
+    font-size: 27px;
+    font-weight: 700;
+    color: black;
+    line-height: 1;
+}
+.sl_subtitle03 {
+    font-size: 27px;
+    font-weight: 100;
+    color: black;
+    line-height: 1;
+}
