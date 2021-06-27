@@ -6,14 +6,8 @@
     background-color: #FFFFFA;
     color : #001A23;
 }
-@mixin flex-wrapper{
-    text-align: center;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction:column;
-    height : 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+
+@mixin append_scrollbar {
     &::-webkit-scrollbar {
         //@function:#f4f4f4;
         width:6px;
@@ -35,9 +29,13 @@
         display:none;
     }
 }
-
+@mixin flex-wrapper{
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction:column; 
+}
 @mixin flex-element (){
-    width: 100%;
     flex-grow: 0;
     flex-shrink : 0;
     flex-basis :auto;
