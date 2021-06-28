@@ -5,7 +5,7 @@ import { RECAPTCHA_CLIENT_KEY } from './constants/constants';
 function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('asdfasdf');
+    const [message, setMessage] = useState('');
     const [response, setResponse] = useState('');
     const wrapper = useRef('');
     const onSubmit = () => {
