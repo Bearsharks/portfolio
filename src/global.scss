@@ -46,6 +46,14 @@
     padding: 20px;
     border-bottom: 1px solid #f48600;
     @media screen and (max-width: 768px){
-        font-size: 3em;
+        font-size: 12vw;
+    }
+}
+@mixin header2() {
+    font-family: 'Open Sans';
+    margin:0;
+    font-size: 8vw;
+    @media screen and (max-width: 768px){
+        font-size: 15vw;
     }
 }
