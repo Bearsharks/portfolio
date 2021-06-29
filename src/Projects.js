@@ -63,7 +63,7 @@ function Projects() {
             link: "https://bearsharks.github.io/99-interactions"
         },
         summary: [`웹상에서 검색된 여러 이미지로 사진모자이크를`, `실시간으로 생성하는 웹앱입니다.`],
-        tech: [`HTML5 CANVAS`, `WebWorker`, `Bing image Search API`, `Azure Functions`],
+        tech: [`React`, `HTML5 CANVAS`, `WebWorker`, `Bing image Search API`, `Azure Functions`],
         detail: (
             <div>
                 <ul style={{
@@ -125,7 +125,7 @@ function Projects() {
             </h1>
 
             <h2 className={styles[`project__header2`]}>
-                실습을 통해 익히며, 이렇게 쌓은 경험으로 성장합니다.
+                실습을 통해 익히며, 이를 통해 쌓은 경험으로 성장하고자 합니다.
                 <br />
                 다양한 문제를 고민하고 개선한 경험들을 소개합니다
             </h2>
