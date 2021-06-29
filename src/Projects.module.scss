@@ -22,10 +22,10 @@
 }
 
 .project__header2{
-    font-size: 3vw;
+    font-size: 2vw;
     margin: 60px 0;
     @media screen and (max-width: 768px){
-        font-size: 6vw;
+        font-size: 3.5vw;
     }
 }
 
@@ -169,3 +169,9 @@
     text-align: center !important;
     font-size: 28px;
 }
+
+    .list-image{
+        @media screen and (max-width: 768px){
+            width : 100%;
+        }
+    }

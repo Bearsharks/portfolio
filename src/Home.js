@@ -1,7 +1,7 @@
 import './Home.scss';
 import { useEffect, useRef } from "react"
 import Article from "./components/Article"
-import { ReactComponent as Icon } from './expand.svg';
+import { ReactComponent as Icon } from './images/expand.svg';
 function Home() {
     const wrapperRef = useRef(null);
     const introRef = useRef(null);

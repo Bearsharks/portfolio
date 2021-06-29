@@ -1,7 +1,9 @@
 import styles from './Projects.module.scss'
 import ProjectList from './components/ProjectList'
 import LinkBtn from './components/LinkBtn';
-import imlogo from './im로고.png'
+import imlogo from './images/imlogo.png'
+import imshow1 from './images/imageMosaicShow1.gif'
+import imshow2 from './images/imageMosaicShow2.gif'
 function Projects() {
     const careerList = [{
         logo: (
@@ -60,8 +62,8 @@ function Projects() {
             organization: `개인프로젝트`,
             link: "https://bearsharks.github.io/99-interactions"
         },
-        summary: [`웹상에서 검색된 여러 이미지로 이미지모자이크를`, `실시간으로 생성하는 웹앱입니다.`],
-        tech: [`React`, `HTML5 CANVAS`, `Bing image Search API`, `Azure Functions`],
+        summary: [`웹상에서 검색된 여러 이미지로 사진모자이크를`, `실시간으로 생성하는 웹앱입니다.`],
+        tech: [`HTML5 CANVAS`, `WebWorker`, `Bing image Search API`, `Azure Functions`],
         detail: (
             <div>
                 <ul style={{
@@ -69,16 +71,16 @@ function Projects() {
                 }}>
                     <h3>특징</h3>
                     <li>수 만개의 이미지 조각들로 사진모자이크를 동적으로 생성합니다.</li>
+                    <img className={styles["list-image"]} src={imshow1} alt="이미지 모자이크 보여주기"></img>
                     <li>캐싱, WebWorker를 이용한 병렬처리로 저사양 기기에서도 빠르게 이미지를 처리합니다.</li>
-                    <li>사용자는 이미지모자이크와 직관적으로 인터랙션하여 원하는 대로 살펴 볼 수 있습니다.</li>
-                    <li>핀치 줌 등의 모바일 인터랙션을 지원하여 다양한 디바이스에서 동일한 UX를 제공합니다.</li>
-                    <a
-                        href="https://github.com/bearsharks/99-interactions"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <img className={styles["list-image"]} src={imshow2} alt="이미지 모자이크 보여주기"></img>
+                    <li>사용자는 스크롤, 드래그, 클릭 등 직관적 동작으로 사진모자이크와 인터랙션 할 수 있습니다.</li>
+                    <li>핀치 줌 등의 모바일 인터랙션도 지원하여 다양한 디바이스에서 동일한 UX를 제공합니다.</li>
+                    <LinkBtn
+                        link="https://github.com/bearsharks/99-interactions"
                     >
                         깃허브 링크
-                    </a>
+                    </LinkBtn>
                 </ul>
             </div>
 
@@ -97,14 +99,14 @@ function Projects() {
             link: "https://bearsharks.github.io/portfolio"
         },
         summary: [`웹 포트폴리오입니다.`],
-        tech: [`React`, `SCSS`, `ReCaptcha v3`, `google oauth2`, `Azure Functions`],
+        tech: [`React`, `SCSS`, `ReCaptcha v3`, `Google OAuth2`, `Azure Functions`],
         detail: (
             <ul style={{
                 listStyle: `disc`
             }}>
                 <h3>특징</h3>
                 <li>리액트를 활용한 컴포넌트기반 웹 포트폴리오입니다.</li>
-                <li>순수 자바스크립트로 구현한 여러가지 인터액션요소들을 추가하였습니다.</li>
+                <li>바날라 자바스크립트로 구현한 여러가지 인터액션요소들로 구성되어 있습니다.</li>
                 <li>GitHub Pages로 호스팅하고 있습니다.</li>
                 <LinkBtn
                     link="https://github.com/bearsharks/portfolio"
@@ -123,10 +125,9 @@ function Projects() {
             </h1>
 
             <h2 className={styles[`project__header2`]}>
-                실습을 통해 성장합니다.
+                실습을 통해 익히며, 이렇게 쌓은 경험으로 성장합니다.
                 <br />
-                이런저런것을 했습니다.
-                <br />
+                다양한 문제를 고민하고 개선한 경험들을 소개합니다
             </h2>
             <ul className={styles[`project-lists`]}>
                 <h2 className={styles[`project-category-name`]}>

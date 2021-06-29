@@ -1,5 +1,5 @@
 import styles from './LinkBtn.module.scss'
-import { ReactComponent as Icon } from '../expand.svg';
+import { ReactComponent as Icon } from '../images/expand.svg';
 function LinkBtn(props) {
     let thema = 'blueblack';
     if (props.thema === 'reverse_blueblack') thema = 'reverse_blueblack';

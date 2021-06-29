@@ -1,6 +1,6 @@
 import './About.scss';
 import { useState, useRef } from 'react'
-import { ReactComponent as Icon } from './expand.svg';
+import { ReactComponent as Icon } from './images/expand.svg';
 
 function About(props) {
     const skillBoxRef = useRef(null);
