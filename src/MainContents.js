@@ -23,10 +23,10 @@ function MainContents(props) {
     return (
         <>
             <Mynav>
-                <NavLink to={`/portfolio/home`} activeClassName={'linkActive'}>Home</NavLink>
-                <NavLink to={`/portfolio/about`} activeClassName={'linkActive'}>About</NavLink>
-                <NavLink to={`/portfolio/projects`} activeClassName={'linkActive'}>Projects</NavLink>
-                <NavLink to={`/portfolio/contact`} activeClassName={'linkActive'}>Contact</NavLink>
+                <NavLink to={`/portfolio/home`} activeClassName={'linkActive'} style={{ "zIndex": 4 }}>Home</NavLink>
+                <NavLink to={`/portfolio/about`} activeClassName={'linkActive'} style={{ "zIndex": 3 }}>About</NavLink>
+                <NavLink to={`/portfolio/projects`} activeClassName={'linkActive'} style={{ "zIndex": 2 }}>Projects</NavLink>
+                <NavLink to={`/portfolio/contact`} activeClassName={'linkActive'} style={{ "zIndex": 1 }}>Contact</NavLink>
             </Mynav>
             <Switch>
                 <Route exact path="/portfolio">
