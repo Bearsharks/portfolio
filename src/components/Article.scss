@@ -4,32 +4,98 @@
     @include reverse-blueblack();
     display: flex;
     height: 100%;
-    width: 95%;
-    margin: 0 auto;
+    width: 85%;
+    margin: 10px auto 0 auto;
     align-items: center;
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 850px){
         flex-direction: column;
+        width: 90%;
     	// Tablet
     }
 }
-.article-wrapper__tags{
+.article-wrapper-tags{
     @include blueblack();
+    @include flex-wrapper();
+    border: 1px solid #001A23;
     height: 100%;
     width:50%;
-    @media screen and (max-width: 768px){
+    font-size: 2.5vw;
+    font-weight: 700;
+    justify-content: center;
+    align-items: flex-end;
+    & div{
+        padding-right : 10%;
+        margin: 1vh;
+    }
+    @media screen and (max-width: 850px){
         height: 50%;
         width:90%;
         border: 1px solid rgba(255,255,255,0.3);
-    }
-
+        flex-direction: row;
+        & div{
+            padding: 0%;
+            margin: 0%;
+            font-size: 4vw;
+            width: 12%;
+            height: 12%;
+            white-space: nowrap;
+            transform: translate(-50%, -100%) rotateZ(-45deg);
+        }
+    }    
 }
-.article-wrapper__contents{
+.article-wrapper-contents{
     @include reverse-blueblack();
+    @include flex-wrapper();
+    border: 1px solid #001A23;
+    justify-content: center;
+    align-items: flex-start;
     height: 100%;
     width:50%;
-    @media screen and (max-width: 768px){
+    font-size: 3vh;
+    & div {
+        width: 80%;
+        padding-left: 10%;
+        margin: 1vh 2vw 1vh 0;
+        text-align: left;
+    }
+    @media screen and (max-width: 850px){
         height: 50%;
-        width:90%;
+        width:90%;        
         border: 1px solid;
+        & div{
+            width: 85%;
+            font-size: 2.5vh;
+        }
+    }
+    @media screen and (max-width: 500px){
+        & div{            
+            margin: 0.5vh 0;
+            font-size: 2vh;
+        }
+    }
+}
+.article-wrapper-contents__link-button{
+    padding-top: 1vh;
+    & a{
+        margin :1vh 0 0 0;
+        float: right;
+    }
+}
+.article_title{
+    position: relative;
+    top: 13vh;
+    height: 0px;
+    left: -21vw;
+    font-size: 5vw;
+    z-index: 100;
+    color: #FFFFFA;
+    line-height: 65px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    @media screen and (max-width: 850px){
+        font-size: 5vw;
+        left: -19vw;
+        top: 10vh;
+
     }
 }

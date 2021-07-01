@@ -95,22 +95,24 @@
     @include reverse_blueblack();
     width: fit-content;
     height:calc(100vh);     
-    & ul{
-        display:flex;
-        list-style: none;
-        width: fit-content;
-        align-items: center;
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        & li{
-            @include flex-element ();
-            width: 100vw;
-            height: 95%;
-            transform : translateY(20px);
-            opacity: 1;
-            transition: all 0.5s linear;
-        }
+    
+}
+
+.article-ul{
+    display:flex;
+    list-style: none;
+    width: fit-content;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    & li{
+        @include flex-element ();
+        width: 100vw;
+        height: 85%;
+        transform : translateY(15px);
+        opacity: 1;
+        transition: all 0.5s linear;
     }
 }
 

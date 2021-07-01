@@ -107,6 +107,7 @@ function Projects() {
                 <h3>특징</h3>
                 <li>리액트를 활용한 컴포넌트기반 웹 포트폴리오입니다.</li>
                 <li>바날라 자바스크립트로 구현한 여러가지 인터액션요소들로 구성되어 있습니다.</li>
+                <li>반응형 디자인과 크로스브라우징을 적용하여 다양한 환경에서 동일한 UX를 제공합니다. </li>
                 <li>GitHub Pages로 호스팅하고 있습니다.</li>
                 <LinkBtn
                     link="https://github.com/bearsharks/portfolio"

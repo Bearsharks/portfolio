@@ -87,32 +87,49 @@ function Home() {
         }
     }, []);
     const introBtnClickHandler = (e) => {
-        debugger;
         wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (window.innerHeight / scrollSpeed));
     }
 
     const articles = [
         {
-            tags: ['#효율지향적', '#창의적인', '#기본에충실'],
-            contents: "hi",
+            title: `About me`,
+            tags: ['#효율지향적', '#창의적', '#기본에 충실한'],
+            contents: [
+                '개발을 통해 더 나은 가치를 전달하는 것을 목표로 하고있습니다.',
+                "사람들이 필요로 하는 것에 대해 생각하고 그 것을 구현하는 것을 좋아합니다.",
+                "관심 기술 :",
+                <span style={{ fontSize: `1px` }}>
+                    <img src="https://img.shields.io/badge/-html5-001A23?style=flat&logo=html5" alt='react' />
+                    &nbsp;
+                    <img src="https://img.shields.io/badge/-Sass-001A23?style=flat&logo=Sass" alt='react' />
+                    &nbsp;
+                    <img src="https://img.shields.io/badge/-React-001A23?style=flat&logo=React" alt='react' />
+                    &nbsp;
+                    <img src="https://img.shields.io/badge/-Recoil-001A23?style=flat&logo=React" alt='react' />
+                    &nbsp;
+                    <img src="https://img.shields.io/badge/-Jest-001A23?style=flat&logo=Jest" alt='react' />
+                </span >,
+            ],
             linkInfo: {
-                alt: "hi",
+                alt: "About me & Skills",
                 link: "/portfolio/about"
             }
         },
         {
-            tags: ['#실습을 통해 배우기', "#비교분석", "#테스트"],
-            contents: "hi",
+            title: `Experience`,
+            tags: ["#비교와 분석", "#지속가능한 코드", '#백문이불여일타'],
+            contents: ['1년 경력의 주니어 웹개발자입니다.', "개발에서 빈틈없는 코드, 지속가능한 코드를 위해 항상 고민합니다.", "가장 좋은 학습방법이 실습이라고 생각하기에 배우면 기록하고, 사이드 프로젝트에 하나씩 적용해봅니다."],
             linkInfo: {
-                alt: "hi",
-                link: "/portfolio/project"
+                alt: "Projects",
+                link: "/portfolio/projects"
             }
         },
         {
-            tags: ['#역지사지', "#예의와배려"],
-            contents: "hi",
+            title: `Communication`,
+            tags: ['#역지사지', "#예의와 배려", "#Open mind"],
+            contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제 메일함은 항상 열려있습니다. 제의나 질문이든 혹은 단지 안부인사든 모두 환영입니다. 부담 없이 연락주세요."],
             linkInfo: {
-                alt: "hi",
+                alt: "Contact",
                 link: "/portfolio/contact"
             }
         },
@@ -133,11 +150,6 @@ function Home() {
                 </div>
                 <div className={`intro__message`}>
                     <div>안녕하세요, 웹 개발자 조성빈입니다.</div>
-                    <div
-                        className={`intro__message--small`}
-                    >
-                        개발로써 사람들에게 더 나은 가치를 전합니다.
-                    </div>
                 </div>
                 <div className={`intro__button`} onClick={introBtnClickHandler}>
                     <Icon width="150" height="150" fill="white" />
@@ -149,12 +161,14 @@ function Home() {
                 className="flex-wrapper__article"
             >
                 <div ref={articleFrameRef} className="article-frame">
-                    <ul>
+                    <ul className="article-ul">
                         {
                             articles.map((el, index) => {
                                 return (
                                     <li key={index}>
+
                                         <Article
+                                            title={el.title}
                                             tags={el.tags}
                                             contents={el.contents}
                                             linkInfo={el.linkInfo}>
