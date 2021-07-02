@@ -1,10 +1,14 @@
-@mixin blueblack {
-    background-color: #001A23;
-    color : #FFFFFA;
+$blueblack: #001A23;
+$reverse-blueblack: #FFFFFA;
+
+
+@mixin style-blueblack {
+    background-color: $blueblack;
+    color : $reverse-blueblack;
 }
-@mixin reverse-blueblack {
-    background-color: #FFFFFA;
-    color : #001A23;
+@mixin style-reverse-blueblack {
+    background-color: $reverse-blueblack;
+    color : $blueblack;
 }
 
 @mixin append_scrollbar {

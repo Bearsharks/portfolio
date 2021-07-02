@@ -15,9 +15,12 @@ function Article(props) {
                     }
                 </div>
                 <div className={`article-wrapper-contents`}>
-                    {
-                        props.contents.map((ele, index) => <div key={index}>{ele}</div>)
-                    }
+                    <ul className={`article-wrapper__ul`}>
+                        {
+                            props.contents.map((ele, index) => <li key={index}>{ele}</li>)
+                        }
+                    </ul>
+
                     <div className={`article-wrapper-contents__link-button`}>
                         <LinkBtn
                             link={props.linkInfo.link}

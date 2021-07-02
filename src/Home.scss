@@ -3,7 +3,7 @@
 
 
 .flex-wrapper {
-    @include blueblack();
+    @include style-blueblack();
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
@@ -88,11 +88,11 @@
 
 .flex-wrapper__article {
     @include flex-element();  
-    @include reverse_blueblack();
+    @include style-reverse-blueblack();
     height:100vh; 
 }
 .article-frame{
-    @include reverse_blueblack();
+    @include style-reverse-blueblack();
     width: fit-content;
     height:calc(100vh);     
     
@@ -106,7 +106,7 @@
     margin: 0px;
     padding: 0px;
     height: 100%;
-    & li{
+    & > li{
         @include flex-element ();
         width: 100vw;
         height: 85%;

@@ -24,10 +24,10 @@
     
 }
 .link-btn--blueblack{
-    @include blueblack();
+    @include style-blueblack();
     font-weight: 500;
 }
 .link-btn--reverse_blueblack{
-    @include reverse_blueblack();
+    @include style-reverse-blueblack();
     font-weight: 600;
 }

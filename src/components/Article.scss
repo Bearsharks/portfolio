@@ -1,7 +1,7 @@
 @import "../global.scss";
 
 .article-wrapper{
-    @include reverse-blueblack();
+    @include style-reverse-blueblack();
     display: flex;
     height: 100%;
     width: 85%;
@@ -14,7 +14,7 @@
     }
 }
 .article-wrapper-tags{
-    @include blueblack();
+    @include style-blueblack();
     @include flex-wrapper();
     border: 1px solid #001A23;
     height: 100%;
@@ -44,10 +44,11 @@
     }    
 }
 .article-wrapper-contents{
-    @include reverse-blueblack();
+    @include style-reverse-blueblack();
     @include flex-wrapper();
     border: 1px solid #001A23;
     justify-content: center;
+    text-align: left;
     align-items: flex-start;
     height: 100%;
     width:50%;
@@ -74,13 +75,18 @@
         }
     }
 }
+.article-wrapper__ul{
+    width:90%;
+}
 .article-wrapper-contents__link-button{
     padding-top: 1vh;
+    
     & a{
         margin :1vh 0 0 0;
         float: right;
     }
 }
+
 .article_title{
     position: relative;
     top: 13vh;

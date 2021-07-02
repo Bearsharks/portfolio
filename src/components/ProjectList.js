@@ -3,7 +3,7 @@ import styles from '../Projects.module.scss'
 import LinkBtn from './LinkBtn';
 function ProjectList(props) {
     return (
-        <li className={styles[`project-list`]}>
+        <div className={styles[`project-list`]}>
             <div className={styles[`project-list-header`]}>
                 <div className={styles[`project-list__name`]}>
                     <div className={styles[`project-list__logo`]}>
@@ -48,7 +48,7 @@ function ProjectList(props) {
             <div className={styles[`project-list__detail`]}>
                 {props.detail}
             </div>
-        </li >
+        </div >
     );
 }
 

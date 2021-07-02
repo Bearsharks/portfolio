@@ -66,9 +66,7 @@ function Projects() {
         tech: [`React`, `HTML5 CANVAS`, `WebWorker`, `Bing image Search API`, `Azure Functions`],
         detail: (
             <div>
-                <ul style={{
-                    listStyle: `disc`
-                }}>
+                <ul>
                     <h3>특징</h3>
                     <li>수 만개의 이미지 조각들로 사진모자이크를 동적으로 생성합니다.</li>
                     <img className={styles["list-image"]} src={imshow1} alt="이미지 모자이크 보여주기"></img>
@@ -130,7 +128,7 @@ function Projects() {
                 <br />
                 다양한 문제를 고민하고 개선한 경험들을 소개합니다
             </h2>
-            <ul className={styles[`project-lists`]}>
+            <div className={styles[`project-lists`]}>
                 <h2 className={styles[`project-category-name`]}>
                     Work Experience
                 </h2>
@@ -150,7 +148,7 @@ function Projects() {
                         )
                     })
                 }
-            </ul>
+            </div>
             <div className={styles[`personal-project-wrapper`]}>
 
                 <ul className={styles[`project-lists`]}>

@@ -1,6 +1,7 @@
 import './Home.scss';
 import { useEffect, useRef } from "react"
 import Article from "./components/Article"
+import Badge from './components/badge';
 import { ReactComponent as Icon } from './images/expand.svg';
 function Home() {
     const wrapperRef = useRef(null);
@@ -97,18 +98,22 @@ function Home() {
             contents: [
                 '개발을 통해 더 나은 가치를 전달하는 것을 목표로 하고있습니다.',
                 "사람들이 필요로 하는 것에 대해 생각하고 그 것을 구현하는 것을 좋아합니다.",
-                "관심 기술 :",
-                <span style={{ fontSize: `1px` }}>
-                    <img src="https://img.shields.io/badge/-html5-001A23?style=flat&logo=html5" alt='react' />
-                    &nbsp;
-                    <img src="https://img.shields.io/badge/-Sass-001A23?style=flat&logo=Sass" alt='react' />
-                    &nbsp;
-                    <img src="https://img.shields.io/badge/-React-001A23?style=flat&logo=React" alt='react' />
-                    &nbsp;
-                    <img src="https://img.shields.io/badge/-Recoil-001A23?style=flat&logo=React" alt='react' />
-                    &nbsp;
-                    <img src="https://img.shields.io/badge/-Jest-001A23?style=flat&logo=Jest" alt='react' />
-                </span >,
+                <>
+                    관심 기술 :<br />
+
+                    <span style={{ fontSize: `1px` }}>
+                        <Badge name="HTML5" color="001A23" /> &nbsp;
+                        <Badge name="SASS" color="001A23" /> &nbsp;
+
+                        <Badge name="JavaScript" color="001A23" /> &nbsp;
+
+                        <Badge name="React" color="001A23" />&nbsp;
+                        <Badge name="Recoil" color="001A23" logo="react" /> &nbsp;
+                        <Badge name="Jest" color="001A23" logoColor="007ACC" />
+
+
+                    </span >
+                </>
             ],
             linkInfo: {
                 alt: "About me & Skills",
@@ -161,7 +166,7 @@ function Home() {
                 className="flex-wrapper__article"
             >
                 <div ref={articleFrameRef} className="article-frame">
-                    <ul className="article-ul">
+                    <div className="article-ul">
                         {
                             articles.map((el, index) => {
                                 return (
@@ -177,7 +182,7 @@ function Home() {
                                 );
                             })
                         }
-                    </ul>
+                    </div>
                 </div>
             </div>
             <div className="test">
