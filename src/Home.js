@@ -67,7 +67,7 @@ function Home() {
 
         if (wrapperRef.current) {
             if (wrapperRef.current.cnt < scrollSpeed) {
-                wrapperRef.current.scrollTop += window.innerHeight / scrollSpeed;
+                wrapperRef.current.scrollTop += introRef.current.clientHeight / scrollSpeed;
                 wrapperRef.current.cnt++;
             }
             moveFrame();
@@ -88,7 +88,7 @@ function Home() {
         }
     }, []);
     const introBtnClickHandler = (e) => {
-        wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (window.innerHeight / scrollSpeed));
+        wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (introRef.current.clientHeight / scrollSpeed));
     }
     let prev = null;
     const ondown = (e) => {
@@ -153,7 +153,7 @@ function Home() {
         {
             title: `Communication`,
             tags: ['#역지사지', "#예의와 배려", "#Open mind"],
-            contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제 메일함은 항상 열려있습니다. 제의나 질문이든 혹은 단지 안부인사든 모두 환영입니다. 부담 없이 연락주세요."],
+            contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제의, 질문, 피드백, 기타 등등도 모두 환영합니다. 부담 없이 연락주세요."],
             linkInfo: {
                 alt: "Contact",
                 link: "/portfolio/contact"
