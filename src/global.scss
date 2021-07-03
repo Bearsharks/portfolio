@@ -45,7 +45,6 @@ $reverse-blueblack: #FFFFFA;
     flex-basis :auto;
 }
 @mixin header1() {
-    font-family: 'Open Sans';
     font-size: 6vw;
     padding: 20px;
     border-bottom: 1px solid #f48600;
@@ -54,7 +53,6 @@ $reverse-blueblack: #FFFFFA;
     }
 }
 @mixin header2() {
-    font-family: 'Open Sans';
     margin:0;
     font-size: 8vw;
     @media screen and (max-width: 768px){
