@@ -43,7 +43,7 @@ function App(props) {
 				</div>
 			</header>
 			<main>
-				<BrowserRouter>
+				<BrowserRouter basename="/portfolio">
 					<Route component={MainContents} />
 				</BrowserRouter>
 			</main>

@@ -23,27 +23,19 @@ function MainContents(props) {
     return (
         <>
             <Mynav>
-                <NavLink to={`/portfolio/home`} activeClassName={'linkActive'} style={{ "zIndex": 4 }}>Home</NavLink>
-                <NavLink to={`/portfolio/about`} activeClassName={'linkActive'} style={{ "zIndex": 3 }}>About</NavLink>
-                <NavLink to={`/portfolio/projects`} activeClassName={'linkActive'} style={{ "zIndex": 2 }}>Projects</NavLink>
-                <NavLink to={`/portfolio/contact`} activeClassName={'linkActive'} style={{ "zIndex": 1 }}>Contact</NavLink>
+                <NavLink to={`/home`} activeClassName={'linkActive'} style={{ "zIndex": 4 }}>Home</NavLink>
+                <NavLink to={`/about`} activeClassName={'linkActive'} style={{ "zIndex": 3 }}>About</NavLink>
+                <NavLink to={`/projects`} activeClassName={'linkActive'} style={{ "zIndex": 2 }}>Projects</NavLink>
+                <NavLink to={`/contact`} activeClassName={'linkActive'} style={{ "zIndex": 1 }}>Contact</NavLink>
             </Mynav>
             <Switch>
-                <Route exact path="/portfolio">
-                    <Redirect to={`/portfolio/home`} />
+                <Route exact path="/">
+                    <Redirect to={`/home`} />
                 </Route>
-                <Route path={`/portfolio/home`}>
-                    <Home></Home>
-                </Route>
-                <Route path={`/portfolio/projects`}>
-                    <Projects></Projects>
-                </Route>
-                <Route path={`/portfolio/about`} component={About}>
-
-                </Route>
-                <Route path={`/portfolio/contact`}>
-                    <Contact></Contact>
-                </Route>
+                <Route path={`/home`} component={Home} />
+                <Route path={`/projects`} component={Projects} />
+                <Route path={`/about`} component={About} />
+                <Route path={`/contact`} component={Contact} />
             </Switch>
         </>
     );
