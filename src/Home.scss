@@ -38,8 +38,8 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    height:100%; 
     font-weight: bold;
+    min-height: 100%;
 }
 .intro__header1{    
     @include header1();

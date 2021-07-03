@@ -38,7 +38,6 @@ function App(props) {
 				>
 
 					<div className="home-btn">
-						home버튼
 					</div>
 					<HamburgerBtn></HamburgerBtn>
 				</div>
