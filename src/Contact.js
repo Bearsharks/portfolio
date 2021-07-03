@@ -1,13 +1,14 @@
 import './Contact.scss';
 import { useState, useEffect, useRef } from 'react'
 import { RECAPTCHA_CLIENT_KEY } from './constants/constants';
+import { useHistory } from 'react-router';
 
 function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [response, setResponse] = useState('');
     const wrapper = useRef('');
+    const history = useHistory();
     const onSubmit = () => {
         const submitData = (token) => {
             fetch('https://99-interactions-functions.azurewebsites.net/api/send_contact?code=tTrkanYWNrTsl87QAyaNKbHNQw7UTqflaYzvwsi5RJ5JuAfoIarOFg==', {
@@ -22,9 +23,10 @@ function Contact() {
                     "g-recaptcha-response": token
                 })
             }).then((res) => {
-                setResponse("send message success");
+                alert("메일이 성공적으로 전송되었습니다!");
+                history.push("/portfolio");
             }).catch((err) => {
-                setResponse("send message fail...");
+                alert("문제가 발생했습니다. 잠시 후에 다시 시도해 주세요");
             });
         }
         window.grecaptcha.ready(() => {
@@ -56,9 +58,8 @@ function Contact() {
                 <textarea name="message" cols="40" rows="10" aria-invalid="false" onChange={e => setMessage(e.target.value)} value={message} />
                 <br />
                 <button onClick={onSubmit}>SUBMIT</button>
+                <br />
             </div>
-            <br />
-            {response && <label>Output:{response}</label>}
         </div>
     );
 }

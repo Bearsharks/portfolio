@@ -1,3 +1,6 @@
+@import "global.scss";
+
+
 .message-form{
     display:flex;
     flex-direction: column;
@@ -43,7 +46,8 @@ button{
     height: 30px;
     border-radius: 5%;
     border-style: none;
-    background-color: aliceblue;
+    color : $reverse-blueblack;
+    background-color: $blueblack;
     font-family: sans-serif;
     font-weight: 700;
     margin: 0px 1px;
