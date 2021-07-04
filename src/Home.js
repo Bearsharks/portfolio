@@ -22,11 +22,11 @@ function Home() {
         return isSame;
     }
     const moveFrame = () => {
-        if (wrapperRef.current.scrollTop < introRef.current.clientHeight) {
+        if (window.scrollY < introRef.current.clientHeight) {
             changeStyle(articleFrameRef.current.style, "transform", "translate(0px, 0px)");
             return;
         }
-        let articleScrollTop = wrapperRef.current.scrollTop - introRef.current.clientHeight;
+        let articleScrollTop = window.scrollY - introRef.current.clientHeight;
         let viewportSize = wrapperRef.current.clientHeight;
         let maxScrollTop = (articleRef.current.clientHeight - viewportSize);
         let frameProgress = Math.max(0, Math.min(0.9999, articleScrollTop / maxScrollTop));
@@ -67,7 +67,7 @@ function Home() {
 
         if (wrapperRef.current) {
             if (wrapperRef.current.cnt < scrollSpeed) {
-                wrapperRef.current.scrollTop += introRef.current.clientHeight / scrollSpeed;
+                window.scrollY += introRef.current.clientHeight / scrollSpeed;
                 wrapperRef.current.cnt++;
             }
             moveFrame();
@@ -88,7 +88,7 @@ function Home() {
         }
     }, []);
     const introBtnClickHandler = (e) => {
-        wrapperRef.current.cnt = Math.floor(wrapperRef.current.scrollTop / (introRef.current.clientHeight / scrollSpeed));
+        wrapperRef.current.cnt = Math.floor(window.scrollY / (introRef.current.clientHeight / scrollSpeed));
     }
     let prev = null;
     const ondown = (e) => {
@@ -109,7 +109,7 @@ function Home() {
                 }
             }
         }
-        wrapperRef.current.scrollTop -= dx / cnt;
+        window.scrollTo(0, window.scrollY - (dx / cnt));
         prev = e.changedTouches;
     }
     const articles = [

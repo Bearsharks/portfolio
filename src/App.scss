@@ -1,6 +1,5 @@
 
 .App{
-    overflow:hidden;
     height: calc(100vh);
 }
 
@@ -29,7 +28,7 @@ header{
     transition: transform 0.4s ease;
 }
 .header-wrapper--navActive {
-    position: inherit;
+    background: none;
 }
 .home-btn{
     z-index: 100;

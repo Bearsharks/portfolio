@@ -153,7 +153,7 @@ function About(props) {
                             <h3> Tools</h3>
                             <Badge name="visual studio code" color="fffff5" logoColor="007ACC" />  <Badge name="git" color="fffff5" />
                         </div>
-
+                        <br />
                     </div>
                 </div>
 

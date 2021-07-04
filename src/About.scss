@@ -3,8 +3,6 @@
 .about_wrapper{
     @include flex-wrapper();
     @include append_scrollbar();
-    overflow-y: scroll;
-    overflow-x: hidden;
     width: 100vw;
     height:100vh; 
 }
@@ -108,7 +106,6 @@
 .skill-btns{
     position: relative;
     @include flex-wrapper();
-    overflow: unset;
     width: 102%;
     left: -1%;
     height: 0px;
