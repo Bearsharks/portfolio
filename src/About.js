@@ -132,7 +132,8 @@ function About(props) {
                         <div className={`skill-box__contents`}>
                             <h3>Publishing</h3>
                             <Badge name="HTML5" color="fffff5" /> <Badge name="CSS3" color="fffff5" logoColor="007ACC" /> <Badge name="SASS" color="fffff5" /> <br />
-                            CSS3 애니메이션과 반응형 디자인가능 SCSS css-module로 개발하는 것을 선호<br />
+                            디자인이 주어지면 웹표준과 웹호환성을 고려하여 화면을 구성할 수 있습니다.<br />
+                            css를 활용하여 애니메이션과 반응형 웹을 구현 할 수 있습니다.
                         </div>
                         <div className={`skill-box__contents`}>
                             <h3>Programing language</h3>
