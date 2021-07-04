@@ -27,7 +27,7 @@ function Home() {
             return;
         }
         let articleScrollTop = window.scrollY - introRef.current.clientHeight;
-        let viewportSize = wrapperRef.current.clientHeight;
+        let viewportSize = window.innerHeight;
         let maxScrollTop = (articleRef.current.clientHeight - viewportSize);
         let frameProgress = Math.max(0, Math.min(0.9999, articleScrollTop / maxScrollTop));
         let curTop = Math.min(maxScrollTop, articleScrollTop);
@@ -164,7 +164,7 @@ function Home() {
         <div
             ref={wrapperRef}
             onScroll={onScrollHandler}
-            className="flex-wrapper blueblack">
+            className="wrapper">
             <div
                 ref={introRef}
                 className="flex-wrapper__intro"

@@ -2,13 +2,14 @@
 
 
 
-.flex-wrapper {
+.wrapper {
     @include style-blueblack();
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
     flex-direction:column;
-    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .flex-wrapper__intro {

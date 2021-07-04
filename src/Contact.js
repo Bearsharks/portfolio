@@ -1,4 +1,5 @@
-import './Contact.scss';
+
+import styles from './Contact.module.scss'
 import { useState, useEffect, useRef } from 'react'
 import { RECAPTCHA_CLIENT_KEY } from './constants/constants';
 import { useHistory } from 'react-router';
@@ -44,12 +45,12 @@ function Contact() {
     }, []);
     return (
         <div
-            className={`wrapper`}
+            className={styles[`wrapper`]}
             ref={wrapper}
             onWheel={e => window.onWheelStopPropa(e)}
         >
-            <h1 className={`wrapper__header`}>Contact</h1>
-            <div className={`message-form`}>
+            <h1 className={styles[`wrapper__header`]}>Contact</h1>
+            <div className={styles[`message-form`]} >
                 <label>Name : </label>
                 <input type="text" onChange={e => setName(e.target.value)} value={name} />
                 <label>Email : </label>
