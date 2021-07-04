@@ -7,11 +7,11 @@ import imshow2 from './images/imageMosaicShow2.gif'
 function Projects() {
     const careerList = [{
         logo: (
-            <p>
+            <h6>
                 <div className={styles["sl_subtitle01"]}>업무포털시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
                 <span className={styles["sl_subtitle03"]}>Portal</span>
-            </p>
+            </h6>
         ),
         info: {
             name: "Smartportal",
@@ -30,11 +30,11 @@ function Projects() {
         )
     }, {
         logo: (
-            <p>
+            <h6>
                 <div className={styles["sl_subtitle01"]}>문서관리시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
                 <span className={styles["sl_subtitle03"]}>EDMS</span>
-            </p>
+            </h6>
         ),
         info: {
             name: `SmartEDMS`,
