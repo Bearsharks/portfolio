@@ -18,6 +18,7 @@ function ProjectList(props) {
                             <LinkBtn
                                 link={props.info.link}
                                 thema={props.thema}
+                                openNewTab={true}
                             > 링크 </LinkBtn>
 
                         }

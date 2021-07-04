@@ -7,11 +7,13 @@ import imshow2 from './images/imageMosaicShow2.gif'
 function Projects() {
     const careerList = [{
         logo: (
-            <h6>
+            <figure style={{
+                margin: `0px`
+            }}>
                 <div className={styles["sl_subtitle01"]}>업무포털시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
                 <span className={styles["sl_subtitle03"]}>Portal</span>
-            </h6>
+            </figure>
         ),
         info: {
             name: "Smartportal",
@@ -30,11 +32,13 @@ function Projects() {
         )
     }, {
         logo: (
-            <h6>
+            <figure style={{
+                margin: `0px`
+            }}>
                 <div className={styles["sl_subtitle01"]}>문서관리시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
                 <span className={styles["sl_subtitle03"]}>EDMS</span>
-            </h6>
+            </figure>
         ),
         info: {
             name: `SmartEDMS`,
@@ -76,6 +80,7 @@ function Projects() {
                     <li>핀치 줌 등의 모바일 인터랙션도 지원하여 다양한 디바이스에서 동일한 UX를 제공합니다.</li>
                     <LinkBtn
                         link="https://github.com/bearsharks/99-interactions"
+                        openNewTab={true}
                     >
                         깃허브 링크
                     </LinkBtn>
@@ -109,6 +114,7 @@ function Projects() {
                 <li>GitHub Pages로 호스팅하고 있습니다.</li>
                 <LinkBtn
                     link="https://github.com/bearsharks/portfolio"
+                    openNewTab={true}
                 >
                     깃허브 링크
                 </LinkBtn>

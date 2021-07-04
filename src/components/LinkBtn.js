@@ -6,8 +6,9 @@ function LinkBtn(props) {
     return (
         <a
             href={props.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={props.openNewTab && "_blank"}
+            rel={props.openNewTab && "noopener noreferrer"}
+
             className={styles["link-btn"] + " " + styles["link-btn--" + thema]}
         >
             {props.children}
