@@ -67,7 +67,7 @@ function Home() {
 
         if (wrapperRef.current) {
             if (wrapperRef.current.cnt < scrollSpeed) {
-                window.scrollY += introRef.current.clientHeight / scrollSpeed;
+                window.scrollTo(0, window.scrollY + (window.innerHeight / scrollSpeed));
                 wrapperRef.current.cnt++;
             }
             moveFrame();
@@ -88,29 +88,7 @@ function Home() {
         }
     }, []);
     const introBtnClickHandler = (e) => {
-        wrapperRef.current.cnt = Math.floor(window.scrollY / (introRef.current.clientHeight / scrollSpeed));
-    }
-    let prev = null;
-    const ondown = (e) => {
-        prev = e.touches;
-    }
-    const onup = (e) => {
-        prev = null;
-    }
-    const onmove = (e) => {
-        let dx = 0;
-        let cnt = 0;
-        for (let i = 0; i < e.changedTouches.length; i++) {
-            for (let j = 0; j < prev.length; j++) {
-                if (prev[j].identifier === e.changedTouches[i].identifier) {
-                    dx += e.changedTouches[i].clientX - prev[j].clientX;
-                    ++cnt;
-                    break;
-                }
-            }
-        }
-        window.scrollTo(0, window.scrollY - (dx / cnt));
-        prev = e.changedTouches;
+        wrapperRef.current.cnt = Math.floor(window.scrollY / (window.innerHeight / scrollSpeed));
     }
     const articles = [
         {
@@ -184,9 +162,7 @@ function Home() {
             </div>
             <div
                 ref={articleRef}
-                onTouchStart={ondown}
-                onTouchMove={onmove}
-                onTouchEnd={onup}
+
                 className="flex-wrapper__article"
             >
                 <div ref={articleFrameRef} className="article-frame">
