@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    & a{
+    & > a{
         width: 230px;
         text-decoration: none ;
         font-size: 3rem;
@@ -38,4 +38,10 @@
     margin-left: 100%;
     visibility: hidden;
     transition : all 1s ease;
+}
+.miniLink{
+    width: 230px;
+    margin: 20px;
+    padding: 10px;
+    border-top: 1px solid white;
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import './Navigation.scss';
+import MiniLinks from "./MiniLinks";
 import { useRecoilState } from 'recoil';
 import { isNavActive } from '../atoms/isNavActive'
 
@@ -17,6 +18,12 @@ function Navigation({ children }) {
             className={"navigation " + (isActive ? "navigation--active" : "navigation--inactive")}
         >
             {children}
+            <div className={"miniLink"}>
+                <MiniLinks
+
+                    linkSize={40}
+                ></MiniLinks>
+            </div>
         </div>
     );
 }
