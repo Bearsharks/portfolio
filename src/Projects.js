@@ -1,6 +1,7 @@
 import styles from './Projects.module.scss'
 import ProjectList from './components/ProjectList'
 import LinkBtn from './components/LinkBtn';
+import MyFooter from './components/MyFooter';
 import imlogo from './images/imlogo.png'
 import imshow1 from './images/imageMosaicShow1.gif'
 import imshow2 from './images/imageMosaicShow2.gif'
@@ -178,7 +179,8 @@ function Projects() {
                     }
                 </ul>
             </div>
-
+            <MyFooter className="test">
+            </MyFooter>
         </div>
     );
 }

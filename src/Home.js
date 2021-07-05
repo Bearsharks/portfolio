@@ -2,6 +2,7 @@ import './Home.scss';
 import { useEffect, useRef } from "react"
 import Article from "./components/Article"
 import Badge from './components/badge';
+import MyFooter from './components/MyFooter';
 import { ReactComponent as Icon } from './images/expand.svg';
 function Home() {
     const wrapperRef = useRef(null);
@@ -185,9 +186,8 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="test">
-                test
-            </div>
+            <MyFooter className="test">
+            </MyFooter>
         </div>
 
     );
