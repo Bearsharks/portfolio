@@ -61,7 +61,7 @@ function Projects() {
     }];
 
     const personalList = [{
-        logo: (<img style={{ borderRadius: `50%`, width: `100%`, height: `100%` }} src={imlogo} />),
+        logo: (<img style={{ borderRadius: `50%`, width: `100%`, height: `100%` }} src={imlogo} alt={`mosaic logo`} />),
         info: {
             name: `이미지 모자이크`,
             periord: `2021.5 ~ `,

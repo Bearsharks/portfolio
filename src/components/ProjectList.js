@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import styles from '../Projects.module.scss'
 import LinkBtn from './LinkBtn';
 function ProjectList(props) {

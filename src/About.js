@@ -1,5 +1,5 @@
 import './About.scss';
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import { ReactComponent as Icon } from './images/expand.svg';
 import Badge from './components/badge';
 function About(props) {
