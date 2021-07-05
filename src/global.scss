@@ -12,9 +12,11 @@ $reverse-blueblack: #FFFFFA;
 }
 
 @mixin append_scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #babac0 #f4f4f4;
     &::-webkit-scrollbar {
         //@function:#f4f4f4;
-        width:6px;
+        width:7px;
     }
     
     /* background of the scrollbar except button or resizer */

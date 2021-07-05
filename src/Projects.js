@@ -8,7 +8,8 @@ function Projects() {
     const careerList = [{
         logo: (
             <figure style={{
-                margin: `0px`
+                margin: `0px`,
+                textAlign: `center`
             }}>
                 <div className={styles["sl_subtitle01"]}>업무포털시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
@@ -33,7 +34,8 @@ function Projects() {
     }, {
         logo: (
             <figure style={{
-                margin: `0px`
+                margin: `0px`,
+                textAlign: `center`
             }}>
                 <div className={styles["sl_subtitle01"]}>문서관리시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
@@ -59,7 +61,7 @@ function Projects() {
     }];
 
     const personalList = [{
-        logo: (<img style={{ borderRadius: `50%` }} src={imlogo} />),
+        logo: (<img style={{ borderRadius: `50%`, width: `100%`, height: `100%` }} src={imlogo} />),
         info: {
             name: `이미지 모자이크`,
             periord: `2021.5 ~ `,

@@ -48,6 +48,7 @@
     @include flex-element();
     transform-style: preserve-3d;
     perspective:100vw;
+    overflow: hidden;
 }
 
 .about-box--blueblack{    

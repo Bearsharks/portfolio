@@ -156,17 +156,16 @@ function About(props) {
                         <br />
                     </div>
                 </div>
+                <div className={`skill-btns`} >
+                    <div className={`skill-btns-left`} onClick={() => rotBtnClickHandler(-1)}>
+                        <Icon className={`skill-btns-left__large`} width="110" height="100" fill='lightgrey' />
+                        <Icon className={`skill-btns-left__small`} width="50" height="50" fill='lightgrey' />
+                    </div>
 
-            </div>
-            <div className={`skill-btns`} >
-                <div className={`skill-btns-left`} onClick={() => rotBtnClickHandler(-1)}>
-                    <Icon className={`skill-btns-left__large`} width="110" height="100" fill='lightgrey' />
-                    <Icon className={`skill-btns-left__small`} width="50" height="50" fill='lightgrey' />
-                </div>
-
-                <div className={`skill-btns-right`} onClick={() => rotBtnClickHandler(1)}>
-                    <Icon className={`skill-btns-right__large`} width="110" height="100" fill='lightgrey' />
-                    <Icon className={`skill-btns-right__small`} width="50" height="50" fill='lightgrey' />
+                    <div className={`skill-btns-right`} onClick={() => rotBtnClickHandler(1)}>
+                        <Icon className={`skill-btns-right__large`} width="110" height="100" fill='lightgrey' />
+                        <Icon className={`skill-btns-right__small`} width="50" height="50" fill='lightgrey' />
+                    </div>
                 </div>
             </div>
         </div >

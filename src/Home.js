@@ -104,7 +104,7 @@ function Home() {
                         <Badge name="HTML5" color="001A23" /> &nbsp;
                         <Badge name="SASS" color="001A23" /> &nbsp;
 
-                        <Badge name="JavaScript" color="001A23" /> &nbsp;
+                        <Badge name="ES6~" color="001A23" logo="javascript" /> &nbsp;
 
                         <Badge name="React" color="001A23" />&nbsp;
                         <Badge name="Recoil" color="001A23" logo="react" /> &nbsp;
