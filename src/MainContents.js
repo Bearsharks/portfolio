@@ -6,9 +6,13 @@ import About from "./About"
 import Contact from "./Contact"
 import Projects from "./Projects"
 import Mynav from "./components/Navigation"
+import { useSetRecoilState } from 'recoil';
+import { headerActive, backBtnState } from "./atoms/atoms"
 
 function MainContents(props) {
     const history = useHistory();
+    const setHeaderActive = useSetRecoilState(headerActive);
+    const setBackBtnState = useSetRecoilState(backBtnState);
     const getLocationId = ({ pathname, search, hash }) => {
         return pathname + (search ? "?" + search : "") + (hash ? "#" + hash : "");
     }
@@ -18,6 +22,13 @@ function MainContents(props) {
             history.block((location, action) =>
                 action !== "PUSH" || getLocationId(location) !== getLocationId(history.location)
             );
+
+            history.listen((location, action) => {
+                setHeaderActive(true);
+                if (location.pathname === '/home') setBackBtnState(false);
+                else setBackBtnState(true);
+                //location.
+            });
         }, [] // eslint-disable-line react-hooks/exhaustive-deps
     );
     return (

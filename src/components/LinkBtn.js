@@ -1,11 +1,12 @@
 import styles from './LinkBtn.module.scss'
+import { NavLink } from "react-router-dom";
 import { ReactComponent as Icon } from '../images/expand.svg';
 function LinkBtn(props) {
     let thema = 'blueblack';
     if (props.thema === 'reverse_blueblack') thema = 'reverse_blueblack';
     return (
-        <a
-            href={props.link}
+        <NavLink
+            to={props.link}
             target={props.openNewTab && "_blank"}
             rel={props.openNewTab && "noopener noreferrer"}
 
@@ -17,7 +18,7 @@ function LinkBtn(props) {
                 height="20"
                 fill={thema === 'reverse_blueblack' ? `#001A23` : `#FFFFFA`}>
             </Icon>
-        </a>
+        </NavLink>
     );
 }
 

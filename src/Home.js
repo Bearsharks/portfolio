@@ -117,7 +117,7 @@ function Home() {
             ],
             linkInfo: {
                 alt: "About me & Skills",
-                link: "/portfolio/about"
+                link: "/about"
             }
         },
         {
@@ -126,7 +126,7 @@ function Home() {
             contents: ['1년 경력의 주니어 웹개발자입니다.', "개발에서 빈틈없는 코드, 지속가능한 코드를 위해 항상 고민합니다.", "가장 좋은 학습방법이 실습이라고 생각하기에 배우면 기록하고, 사이드 프로젝트에 하나씩 적용해봅니다."],
             linkInfo: {
                 alt: "Projects",
-                link: "/portfolio/projects"
+                link: "/projects"
             }
         },
         {
@@ -135,7 +135,7 @@ function Home() {
             contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제의, 질문, 피드백, 기타 등등도 모두 환영합니다. 부담 없이 연락주세요."],
             linkInfo: {
                 alt: "Contact",
-                link: "/portfolio/contact"
+                link: "/contact"
             }
         },
     ]

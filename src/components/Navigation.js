@@ -2,7 +2,7 @@ import React from "react"
 import './Navigation.scss';
 import MiniLinks from "./MiniLinks";
 import { useRecoilState } from 'recoil';
-import { isNavActive } from '../atoms/isNavActive'
+import { isNavActive } from '../atoms/atoms'
 
 function Navigation({ children }) {
 

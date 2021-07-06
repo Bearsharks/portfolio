@@ -30,8 +30,37 @@ header{
 .header-wrapper--navActive {
     background: none;
 }
-.home-btn{
+@keyframes shivering {
+    0%{
+        transform: rotateZ(1deg);
+    }
+    15%{
+        transform: rotateZ(-2deg);
+    }
+    30%{
+        transform: rotateZ(2deg);
+    }
+    50%{
+        transform: rotateZ(-1deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+  }
+
+.back-btn{
     z-index: 100;
+    margin: 5px;
+    &:hover{
+        animation-name:shivering;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.back-btn--hide{
+    display: hidden;
 }
 main {
     height: calc(100%);
