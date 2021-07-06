@@ -1,6 +1,6 @@
 import styles from './Projects.module.scss'
 import ProjectList from './components/ProjectList'
-import LinkBtn from './components/LinkBtn';
+import ExternLinkBtn from './components/ExternLinkBtn';
 import MyFooter from './components/MyFooter';
 import imlogo from './images/imlogo.png'
 import imshow1 from './images/imageMosaicShow1.gif'
@@ -81,12 +81,12 @@ function Projects() {
                     <img className={styles["list-image"]} src={imshow2} alt="이미지 모자이크 보여주기"></img>
                     <li>사용자는 스크롤, 드래그, 클릭 등 직관적 동작으로 사진모자이크와 인터랙션 할 수 있습니다.</li>
                     <li>핀치 줌 등의 모바일 인터랙션도 지원하여 다양한 디바이스에서 동일한 UX를 제공합니다.</li>
-                    <LinkBtn
+                    <ExternLinkBtn
                         link="https://github.com/bearsharks/99-interactions"
                         openNewTab={true}
                     >
                         깃허브 링크
-                    </LinkBtn>
+                    </ExternLinkBtn>
                 </ul>
             </div>
 
@@ -115,12 +115,12 @@ function Projects() {
                 <li>바날라 자바스크립트로 구현한 여러가지 인터액션요소들로 구성되어 있습니다.</li>
                 <li>반응형 디자인과 크로스브라우징을 적용하여 다양한 환경에서 동일한 UX를 제공합니다. </li>
                 <li>GitHub Pages로 호스팅하고 있습니다.</li>
-                <LinkBtn
+                <ExternLinkBtn
                     link="https://github.com/bearsharks/portfolio"
                     openNewTab={true}
                 >
                     깃허브 링크
-                </LinkBtn>
+                </ExternLinkBtn>
             </ul>
         )
     }];

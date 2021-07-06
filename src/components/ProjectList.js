@@ -1,5 +1,5 @@
 import styles from '../Projects.module.scss'
-import LinkBtn from './LinkBtn';
+import ExternLinkBtn from './ExternLinkBtn';
 function ProjectList(props) {
     return (
         <div className={styles[`project-list`]}>
@@ -14,11 +14,11 @@ function ProjectList(props) {
                         <div>{props.info.periord}</div>
                         <div >{props.info.organization}</div>
                         {props.info.link &&
-                            <LinkBtn
+                            <ExternLinkBtn
                                 link={props.info.link}
                                 thema={props.thema}
                                 openNewTab={true}
-                            > 링크 </LinkBtn>
+                            > 링크 </ExternLinkBtn>
 
                         }
                     </div>
