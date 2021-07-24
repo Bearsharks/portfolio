@@ -27,6 +27,7 @@ function MainContents(props) {
                 setHeaderActive(true);
                 if (location.pathname === '/home') setBackBtnState(false);
                 else setBackBtnState(true);
+                window.scrollTo(0, 0)
                 //location.
             });
         }, [] // eslint-disable-line react-hooks/exhaustive-deps
