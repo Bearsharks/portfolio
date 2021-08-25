@@ -24,12 +24,13 @@ function Projects() {
             link: 'http://www.nanum.co.kr/?page_id=165'
         },
         summary: [`그룹웨어 서비스와 사용자를 연결하는 포탈 서비스`],
-        tech: [`Jquery, JSP, Spring, Oracle`],
+        tech: [`Jquery, KendoUI, Spring, Oracle`],
         detail: (
             <ol>
                 <li>4개 고객사 포탈 시스템 개발 및 유지보수</li>
-                <li>SPA 히스토리, 사용자 정의 게시판 등 각종 기능 개발</li>
-                <li>요구분석, 서버 요청 최소화로 초기응답시간 개선, 직관적동작을 통한 UX개선</li>
+                <li>템플릿을 활용한 컴포넌트주도개발을 도입하여 코드 재사용성 향상</li>
+                <li>사용자 정의 게시판 등 각종 기능 개발</li>
+                <li>초기응답시간감소, 직관적 동작 등 각종 페이지 UI/UX개선</li>
             </ol>
         )
     }, {
@@ -54,9 +55,8 @@ function Projects() {
         tech: [`Jquery, Servlet, Oracle`],
         detail: (
             <ol>
-                <li>구형브라우저(IE)에 맞춰진 시스템을 최신 브라우저를 지원하도록 크로스브라우징 작업</li>
-                <li>파일관리, XML파싱 폴리필 작성</li>
-                <li>웹표준에 맞춘 개발 및 UX개선</li>
+                <li>웹표준과 웹호환성을 고려한 크로스브라우징 작업 및 고도화</li>
+                <li>ActiveX제거, 페이지 UI/UX개선</li>
             </ol>
         )
     }];
@@ -112,7 +112,7 @@ function Projects() {
             }}>
                 <h3>특징</h3>
                 <li>리액트를 활용한 컴포넌트기반 웹 포트폴리오입니다.</li>
-                <li>바날라 자바스크립트로 구현한 여러가지 인터액션요소들로 구성되어 있습니다.</li>
+                <li>자바스크립트로 구현한 여러가지 인터액션요소들로 구성되어 있습니다.</li>
                 <li>반응형 디자인과 크로스브라우징을 적용하여 다양한 환경에서 동일한 UX를 제공합니다. </li>
                 <li>GitHub Pages로 호스팅하고 있습니다.</li>
                 <ExternLinkBtn

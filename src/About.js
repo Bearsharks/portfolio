@@ -91,7 +91,7 @@ function About(props) {
                     <br />
 
                     우선순위에 따른 계획있는 개발을 선호합니다.
-                    <li>당장의 편의보다 사용자에게 전해질 가치를 우선시 합니다.</li>
+                    <li>당장의 편의보다 사용자의 가치를 우선시 합니다.</li>
                 </div>
 
             </div>
@@ -147,7 +147,7 @@ function About(props) {
                             <br />
                             Flux패턴에 대해 이해하고, 상태관리에 Recoil을 활용 할 수 있습니다.
                             <br />
-                            컴포넌트 테스트와 mocking으로 독립된 테스트를 작성 할 수 있습니다.
+                            코드와 함께 발전하는 테스트를 작성 할 수 있습니다.
                         </div>
                         <div className={`skill-box__contents`}>
                             <h3> Tools</h3>

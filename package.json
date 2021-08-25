@@ -6,6 +6,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
+    "@testing-library/react-hooks": "^7.0.1",
     "@testing-library/user-event": "^12.8.3",
     "gh-pages": "^3.2.1",
     "node-sass": "^6.0.0",
@@ -47,5 +48,8 @@
   },
   "devDependencies": {
     "msw": "^0.29.0"
+  },
+  "jest": {
+    "testURL": "https://bearsharks.github.io/portfolio/"
   }
 }
