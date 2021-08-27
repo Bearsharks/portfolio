@@ -143,9 +143,7 @@ function About(props) {
                         <div className={`skill-box__contents`}>
                             <h3>Libraries</h3>
                             <Badge name="React" color="fffff5" /> <Badge name="Recoil" color="fffff5" logo="react" />  <Badge name="Jest" color="fffff5" logoColor="007ACC" /><br />
-                            컴포넌트 구성, hook의 사용에 익숙합니다.
-                            <br />
-                            Flux패턴에 대해 이해하고, 상태관리에 Recoil을 활용 할 수 있습니다.
+                            컴포넌트 구성과 hook의 사용에 익숙합니다. 상태관리를 위해 data-flow graph를 구성 할 수 있습니다.
                             <br />
                             코드와 함께 발전하는 테스트를 작성 할 수 있습니다.
                         </div>
