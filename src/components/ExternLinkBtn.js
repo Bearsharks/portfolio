@@ -15,7 +15,7 @@ function ExternLinkBtn(props) {
             <Icon
                 width="20"
                 height="20"
-                fill={thema === 'reverse_blueblack' ? `#001A23` : `#FFFFFA`}>
+                fill={thema === "reverse_blueblack" ? "#001A23" : "#FFFFFA"}>
             </Icon>
         </a>
     );

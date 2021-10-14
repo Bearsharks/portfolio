@@ -2,13 +2,13 @@ import styles from '../Projects.module.scss'
 import ExternLinkBtn from './ExternLinkBtn';
 function ProjectList(props) {
     return (
-        <div className={styles[`project-list`]}>
-            <div className={styles[`project-list-header`]}>
-                <div className={styles[`project-list__name`]}>
-                    <div className={styles[`project-list__logo`]}>
+        <div className={styles["project-list"]}>
+            <div className={styles["project-list-header"]}>
+                <div className={styles["project-list__name"]}>
+                    <div className={styles["project-list__logo"]}>
                         {props.logo}
                     </div>
-                    <div className={styles[`project-list__info`]}>
+                    <div className={styles["project-list__info"]}>
                         <br />
                         <div >{props.info.name}</div>
                         <div>{props.info.periord}</div>
@@ -23,10 +23,10 @@ function ProjectList(props) {
                         }
                     </div>
                 </div>
-                <div className={styles[`project-list__summary`]}>
+                <div className={styles["project-list__summary"]}>
                     <div style={{
-                        transform: `translate(-5px)`,
-                        marginBottom: `10px`,
+                        transform: "translate(-5px)",
+                        marginBottom: "10px",
 
                     }}>
                         프로젝트 소개 :
@@ -34,18 +34,18 @@ function ProjectList(props) {
                     {props.summary.map((el, index) => (<div key={index}>{el}</div>))}
                     <br />
                     <div style={{
-                        transform: `translate(-5px)`,
-                        marginBottom: `10px`,
+                        transform: "translate(-5px)",
+                        marginBottom: "10px",
 
                     }}>
                         주요 기술 :
                     </div>
                     <div>
-                        {props.tech.join(', ')}
+                        {props.tech.join(", ")}
                     </div>
                 </div>
             </div>
-            <div className={styles[`project-list__detail`]}>
+            <div className={styles["project-list__detail"]}>
                 {props.detail}
             </div>
         </div >

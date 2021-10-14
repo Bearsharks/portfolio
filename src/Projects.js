@@ -9,8 +9,8 @@ function Projects() {
     const careerList = [{
         logo: (
             <figure style={{
-                margin: `0px`,
-                textAlign: `center`
+                margin: "0px",
+                textAlign: "center"
             }}>
                 <div className={styles["sl_subtitle01"]}>업무포털시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
@@ -19,12 +19,12 @@ function Projects() {
         ),
         info: {
             name: "Smartportal",
-            periord: `2019.9 ~ 2020.8`,
-            organization: `나눔기술`,
+            periord: "2019.9 ~ 2020.8",
+            organization: "나눔기술",
             link: 'http://www.nanum.co.kr/?page_id=165'
         },
-        summary: [`그룹웨어 서비스와 사용자를 연결하는 포탈 서비스`],
-        tech: [`Jquery, KendoUI, Spring, Oracle`],
+        summary: ["그룹웨어 서비스와 사용자를 연결하는 포탈 서비스"],
+        tech: ["Jquery, KendoUI, Spring, Oracle"],
         detail: (
             <ol>
                 <li>4개 고객사 포탈 시스템 개발 및 유지보수</li>
@@ -36,8 +36,8 @@ function Projects() {
     }, {
         logo: (
             <figure style={{
-                margin: `0px`,
-                textAlign: `center`
+                margin: "0px",
+                textAlign: "center"
             }}>
                 <div className={styles["sl_subtitle01"]}>문서관리시스템</div>
                 <span className={styles["sl_subtitle02"]}>Smart</span>
@@ -45,14 +45,14 @@ function Projects() {
             </figure>
         ),
         info: {
-            name: `SmartEDMS`,
-            periord: `2020.3 ~ 2020.8`,
-            organization: `나눔기술`,
-            link: 'http://www.nanum.co.kr/?page_id=166'
+            name: "SmartEDMS",
+            periord: "2020.3 ~ 2020.8",
+            organization: "나눔기술",
+            link: "http://www.nanum.co.kr/?page_id=166"
         },
         summary: [
-            `조직 내 문서를 체계적으로 관리하는 문서관리 시스템`],
-        tech: [`Jquery, Servlet, Oracle`],
+            "조직 내 문서를 체계적으로 관리하는 문서관리 시스템"],
+        tech: ["Jquery, Servlet, Oracle"],
         detail: (
             <ol>
                 <li>웹표준과 웹호환성을 고려한 크로스브라우징 작업 및 고도화</li>
@@ -62,15 +62,15 @@ function Projects() {
     }];
 
     const personalList = [{
-        logo: (<img style={{ borderRadius: `50%`, width: `100%`, height: `100%` }} src={imlogo} alt={`mosaic logo`} />),
+        logo: (<img style={{ borderRadius: "50%", width: "100%", height: "100%" }} src={imlogo} alt={"mosaic logo"} />),
         info: {
-            name: `이미지 모자이크`,
-            periord: `2021.5 ~ `,
-            organization: `개인프로젝트`,
+            name: "이미지 모자이크",
+            periord: "2021.5 ~ ",
+            organization: "개인프로젝트",
             link: "https://bearsharks.github.io/99-interactions"
         },
-        summary: [`웹상에서 검색된 여러 이미지로 사진모자이크를`, `실시간으로 생성하는 웹앱입니다.`],
-        tech: [`React`, `HTML5 CANVAS`, `WebWorker`, `Bing image Search API`, `Azure Functions`],
+        summary: ["웹상에서 검색된 여러 이미지로 사진모자이크를", "실시간으로 생성하는 웹앱입니다."],
+        tech: ["React", "HTML5 CANVAS", "WebWorker", "Bing image Search API", "Azure Functions"],
         detail: (
             <div>
                 <ul>
@@ -99,16 +99,16 @@ function Projects() {
             </div>
         ),
         info: {
-            name: `웹 포트폴리오`,
-            periord: `2021.6 ~ `,
-            organization: `개인프로젝트`,
+            name: "웹 포트폴리오",
+            periord: "2021.6 ~ ",
+            organization: "개인프로젝트",
             link: "https://bearsharks.github.io/portfolio"
         },
-        summary: [`웹 포트폴리오입니다.`],
-        tech: [`React`, `SCSS`, `ReCaptcha v3`, `Google OAuth2`, `Azure Functions`],
+        summary: ["웹 포트폴리오입니다."],
+        tech: ["React", "SCSS", "ReCaptcha v3", "Google OAuth2", "Azure Functions"],
         detail: (
             <ul style={{
-                listStyle: `disc`
+                listStyle: "disc"
             }}>
                 <h3>특징</h3>
                 <li>리액트를 활용한 컴포넌트기반 웹 포트폴리오입니다.</li>
@@ -126,19 +126,19 @@ function Projects() {
     }];
     return (
         <div
-            className={styles[`wrapper`]}
+            className={styles["wrapper"]}
         >
-            <h1 className={styles[`project__header1`]}>
+            <h1 className={styles["project__header1"]}>
                 Projects
             </h1>
 
-            <h2 className={styles[`project__header2`]}>
+            <h2 className={styles["project__header2"]}>
                 실습을 통해 익히며, 이를 통해 쌓은 경험으로 성장하고자 합니다.
                 <br />
                 다양한 문제를 고민하고 개선한 경험들을 소개합니다
             </h2>
-            <div className={styles[`project-lists`]}>
-                <h2 className={styles[`project-category-name`]}>
+            <div className={styles["project-lists"]}>
+                <h2 className={styles["project-category-name"]}>
                     Work Experience
                 </h2>
                 {
@@ -151,17 +151,17 @@ function Projects() {
                                 summary={el.summary}
                                 tech={el.tech}
                                 detail={el.detail}
-                                thema={`reverse_blueblack`}
+                                thema={"reverse_blueblack"}
                             >
                             </ProjectList>
                         )
                     })
                 }
             </div>
-            <div className={styles[`personal-project-wrapper`]}>
+            <div className={styles["personal-project-wrapper"]}>
 
-                <ul className={styles[`project-lists`]}>
-                    <h2 className={styles[`project-category-name`]}>Side Projects</h2>
+                <ul className={styles["project-lists"]}>
+                    <h2 className={styles["project-category-name"]}>Side Projects</h2>
                     {
                         personalList.map((el, index) => {
                             return (

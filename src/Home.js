@@ -45,7 +45,7 @@ function Home() {
         let firstStyle = articleFrameRef.current.children[0].children[first].style;
         if (firstShownSizePer > 0.15) {
             changeStyle(firstStyle, "opacity", "1");
-            changeStyle(firstStyle, "transform", `translateY(0px)`);
+            changeStyle(firstStyle, "transform", "translateY(0px)");
         }
         else {
             changeStyle(firstStyle, "opacity", "0");
@@ -57,7 +57,7 @@ function Home() {
         let secondStyle = articleFrameRef.current.children[0].children[second].style;
         if (secondShownSizePer > 0.20) {
             changeStyle(secondStyle, "opacity", "1");
-            changeStyle(secondStyle, "transform", `translateY(0px)`);
+            changeStyle(secondStyle, "transform", "translateY(0px)");
         }
         else {
             changeStyle(secondStyle, "opacity", "0");
@@ -93,15 +93,15 @@ function Home() {
     }
     const articles = [
         {
-            title: `About me`,
-            tags: ['#효율지향적', '#창의적', '#기본에 충실한'],
+            title: "About me",
+            tags: ["#효율지향적", "#창의적", "#기본에 충실한"],
             contents: [
                 '개발을 통해 더 나은 가치를 전달하는 것을 목표로 하고있습니다.',
                 "사람들이 필요로 하는 것에 대해 생각하고 그 것을 구현하는 것을 좋아합니다.",
                 <>
                     관심 기술 :<br />
 
-                    <span style={{ fontSize: `1px` }}>
+                    <span style={{ fontSize: "1px" }}>
                         <Badge name="HTML5" color="001A23" /> &nbsp;
                         <Badge name="SASS" color="001A23" /> &nbsp;
 
@@ -121,8 +121,8 @@ function Home() {
             }
         },
         {
-            title: `Experience`,
-            tags: ["#비교와 분석", "#지속가능한 코드", '#백문이불여일타'],
+            title: "Experience",
+            tags: ["#비교와 분석", "#지속가능한 코드"],
             contents: ['1년 경력의 주니어 웹개발자입니다.', "개발에서 빈틈없는 코드, 지속가능한 코드를 위해 항상 고민합니다.", "가장 좋은 학습방법이 실습이라고 생각하기에 배우면 기록하고, 사이드 프로젝트에 하나씩 적용해봅니다."],
             linkInfo: {
                 alt: "Projects",
@@ -130,8 +130,8 @@ function Home() {
             }
         },
         {
-            title: `Communication`,
-            tags: ['#역지사지', "#예의와 배려", "#Open mind"],
+            title: "Communication",
+            tags: ["#역지사지", "#예의와 배려", "#Open mind"],
             contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제의, 질문, 피드백, 기타 등등도 모두 환영합니다. 부담 없이 연락주세요."],
             linkInfo: {
                 alt: "Contact",
@@ -150,13 +150,13 @@ function Home() {
             >
                 <div>
                     <br /><br /><br />
-                    <div className={`intro__header1`}>Write code for</div>
-                    <div className={`intro__header2`}>humans!</div>
+                    <div className={"intro__header1"}>Write code for</div>
+                    <div className={"intro__header2"}>humans!</div>
                 </div>
-                <div className={`intro__message`}>
+                <div className={"intro__message"}>
                     <div>안녕하세요, 웹 개발자 조성빈입니다.</div>
                 </div>
-                <div className={`intro__button`} onClick={introBtnClickHandler}>
+                <div className={"intro__button"} onClick={introBtnClickHandler}>
                     <Icon width="150" height="150" fill="white" />
                 </div>
 

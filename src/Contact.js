@@ -40,17 +40,17 @@ function Contact() {
     useEffect(() => {
         //리캡차가 현재 페이지에서만 보여지도록 함
         const script = document.createElement("style");
-        script.innerHTML = `.grecaptcha-badge {visibility : visible;}`;
+        script.innerHTML = ".grecaptcha-badge {visibility : visible;}";
         wrapper.current.appendChild(script);
     }, []);
     return (
         <div
-            className={styles[`wrapper`]}
+            className={styles["wrapper"]}
             ref={wrapper}
             onWheel={e => window.onWheelStopPropa(e)}
         >
-            <h1 className={styles[`wrapper__header`]}>Contact</h1>
-            <div className={styles[`message-form`]} >
+            <h1 className={styles["wrapper__header"]}>Contact</h1>
+            <div className={styles["message-form"]} >
                 <label>Name : </label>
                 <input type="text" onChange={e => setName(e.target.value)} value={name} />
                 <label>Email : </label>

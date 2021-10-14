@@ -75,13 +75,13 @@ function About(props) {
         rotBtnClickHandler(lastd);
     }
     return (
-        <div className={`about_wrapper`}>
+        <div className={"about_wrapper"}>
             <div
-                className={`about-box about-box--blueblack`}
+                className={"about-box about-box--blueblack"}
 
             >
-                <h1 className={`about_header`}>About</h1>
-                <div className={`about_detail`}>
+                <h1 className={"about_header"}>About</h1>
+                <div className={"about_detail"}>
                     개발을 통해 사람들에게 더 나은 가치를 전하는 것을 목표로 하고 있습니다.
                     <li>사용자가 원하는 것에 대해 생각하고, 그 것을 구현하는데서 보람을 느낍니다.</li>
                     <br />
@@ -96,7 +96,7 @@ function About(props) {
 
             </div>
             <div
-                className={`about-box`}
+                className={"about-box"}
                 onMouseDown={onMouseDownHandler}
                 onMouseMove={onMouseMoveHandler}
                 onMouseUp={onMouseUpHandler}
@@ -105,15 +105,15 @@ function About(props) {
                 <h2> Skills </h2>
                 <div
                     ref={skillBoxRef}
-                    className={`skill-box-wrapper`}
+                    className={"skill-box-wrapper"}
                 >
 
                     <div
                         ref={backBoxRef}
-                        className={`skill-box skill-box--back`}
+                        className={"skill-box skill-box--back"}
                     >
-                        <h2 className={`skill-box__header`} >Backend</h2>
-                        <div className={`skill-box__contents`}>
+                        <h2 className={"skill-box__header"} >Backend</h2>
+                        <div className={"skill-box__contents"}>
                             <h3>Server</h3>
                             <Badge name="Spring" color="001A23" /> <Badge name="Apache tomcat" color="001A23" logoColor="FFFFFF" /> / <Badge name="Node.js" color="001A23" /> <Badge name="Express" color="001A23" /><br />
                             기본적인 환경 구성과 Restful API를 작성 할 수 있습니다.<br />
@@ -122,47 +122,47 @@ function About(props) {
 
                             정규화와 트랜잭션에 대해 이해하고 기본적인 SQL을 작성 할 수 있습니다.
                         </div>
-                        <h2 className={`skill-box__header`} >ETC </h2>
-                        <div className={`skill-box__contents`}>
+                        <h2 className={"skill-box__header"} >ETC </h2>
+                        <div className={"skill-box__contents"}>
                             <Badge name="Python" color="001A23" /> <Badge name="Linux" color="001A23" logoColor="FFFFFF" /> <Badge name="Azure Functions" color="001A23" /> <Badge name="EC2" color="001A23" logo="Amazon AWS" />
                         </div>
                     </div>
-                    <div className={`skill-box skill-box--front`}>
-                        <h2 className={`skill-box__header`} >Frontend</h2>
-                        <div className={`skill-box__contents`}>
+                    <div className={"skill-box skill-box--front"}>
+                        <h2 className={"skill-box__header"} >Frontend</h2>
+                        <div className={"skill-box__contents"}>
                             <h3>Publishing</h3>
                             <Badge name="HTML5" color="fffff5" /> <Badge name="CSS3" color="fffff5" logoColor="007ACC" /> <Badge name="SASS" color="fffff5" /> <br />
                             디자인이 주어지면 웹표준과 웹호환성을 고려하여 화면을 구성할 수 있습니다.<br />
                             css를 활용하여 애니메이션과 반응형 웹을 구현 할 수 있습니다.
                         </div>
-                        <div className={`skill-box__contents`}>
+                        <div className={"skill-box__contents"}>
                             <h3>Programing language</h3>
                             <Badge name="JavaScript" color="fffff5" /> <br />
                             Javascript 프로토타입개념을 이해하고, es6문법과 여러 표준내장객체에 익숙합니다. <br />
                         </div>
-                        <div className={`skill-box__contents`}>
+                        <div className={"skill-box__contents"}>
                             <h3>Libraries</h3>
                             <Badge name="React" color="fffff5" /> <Badge name="Recoil" color="fffff5" logo="react" />  <Badge name="Jest" color="fffff5" logoColor="007ACC" /><br />
                             컴포넌트 구성과 hook의 사용에 익숙합니다. 상태관리를 위해 data-flow graph를 구성 할 수 있습니다.
                             <br />
                             코드와 함께 발전하는 테스트를 작성 할 수 있습니다.
                         </div>
-                        <div className={`skill-box__contents`}>
+                        <div className={"skill-box__contents"}>
                             <h3> Tools</h3>
                             <Badge name="visual studio code" color="fffff5" logoColor="007ACC" />  <Badge name="git" color="fffff5" />
                         </div>
                         <br />
                     </div>
                 </div>
-                <div className={`skill-btns`} >
-                    <div className={`skill-btns-left`} onClick={() => rotBtnClickHandler(-1)}>
-                        <Icon className={`skill-btns-left__large`} width="110" height="100" fill='lightgrey' />
-                        <Icon className={`skill-btns-left__small`} width="50" height="50" fill='lightgrey' />
+                <div className={"skill-btns"} >
+                    <div className={"skill-btns-left"} onClick={() => rotBtnClickHandler(-1)}>
+                        <Icon className={"skill-btns-left__large"} width="110" height="100" fill='lightgrey' />
+                        <Icon className={"skill-btns-left__small"} width="50" height="50" fill='lightgrey' />
                     </div>
 
-                    <div className={`skill-btns-right`} onClick={() => rotBtnClickHandler(1)}>
-                        <Icon className={`skill-btns-right__large`} width="110" height="100" fill='lightgrey' />
-                        <Icon className={`skill-btns-right__small`} width="50" height="50" fill='lightgrey' />
+                    <div className={"skill-btns-right"} onClick={() => rotBtnClickHandler(1)}>
+                        <Icon className={"skill-btns-right__large"} width="110" height="100" fill='lightgrey' />
+                        <Icon className={"skill-btns-right__small"} width="50" height="50" fill='lightgrey' />
                     </div>
                 </div>
             </div>
