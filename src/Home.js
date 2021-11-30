@@ -129,15 +129,15 @@ function Home() {
                 link: "/projects"
             }
         },
-        {
-            title: "Communication",
-            tags: ["#역지사지", "#예의와 배려", "#Open mind"],
-            contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제의, 질문, 피드백, 기타 등등도 모두 환영합니다. 부담 없이 연락주세요."],
-            linkInfo: {
-                alt: "Contact",
-                link: "/contact"
-            }
-        },
+        // {
+        //     title: "Communication",
+        //     tags: ["#역지사지", "#예의와 배려", "#Open mind"],
+        //     contents: ['예의와 배려로 의사소통하고, 다른 사람의 입장에서 한번 더 생각합니다.', "제의, 질문, 피드백, 기타 등등도 모두 환영합니다. 부담 없이 연락주세요."],
+        //     linkInfo: {
+        //         alt: "Contact",
+        //         link: "/contact"
+        //     }
+        // },
     ]
     return (
         <div
@@ -172,7 +172,6 @@ function Home() {
                             articles.map((el, index) => {
                                 return (
                                     <li key={index}>
-
                                         <Article
                                             title={el.title}
                                             tags={el.tags}

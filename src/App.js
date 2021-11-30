@@ -14,6 +14,7 @@ function App(props) {
 	const navActive = useRecoilValue(isNavActive);
 	const backBtnActive = useRecoilValue(backBtnState);
 	useEffect(() => {
+		return;
 		const isScriptExist = document.getElementById("recaptcha");
 		if (!isScriptExist) {
 			const script = document.createElement("script");
