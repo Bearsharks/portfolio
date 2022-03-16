@@ -1,0 +1,33 @@
+@import "../global.scss";
+
+.link-btn{
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 15px;
+    padding: 0px 20px;
+    text-align: center;
+    line-height: 35px;
+    margin: 1vh;
+    
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    & svg{
+        transform: rotateZ(270deg) translateY(5px);
+    }
+    @media screen and (max-width: 850px){
+        padding: 0px 13px;
+        line-height: 4vh;
+    }
+    
+}
+.link-btn--blueblack{
+    @include style-blueblack();
+    font-weight: 500;
+}
+.link-btn--reverse_blueblack{
+    @include style-reverse-blueblack();
+    font-weight: 600;
+}

@@ -1,3 +1,5 @@
+import MyFooter from 'components/MyFooter';
+import Projects from 'MainContents';
 import './App.scss';
 
 function App() {
@@ -5,10 +7,8 @@ function App() {
     <div className="App">
       <main>
         <header></header>
-        <div>
-
-        </div>
-        <footer></footer>
+        <Projects></Projects>
+        <footer><MyFooter></MyFooter></footer>
       </main>
     </div>
   );
