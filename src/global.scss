@@ -1,14 +1,30 @@
 $blueblack: #001A23;
 $reverse-blueblack: #FFFFFA;
 
-
+@mixin global-padding{
+    margin: 0 auto;
+    max-width: 1600px;
+    padding :0 25px;
+    @media (min-width: 480px){
+        padding :0 25px;
+    }
+    @media (min-width: 768px){
+        padding :0 50px;
+    }
+    @media (min-width: 1080px){
+        padding :0 100px;
+    }
+    @media (min-width: 1600px){
+        padding: 0 150px;  
+    }
+}
 @mixin style-blueblack {
     background-color: $blueblack;
     color : $reverse-blueblack;
 }
 @mixin style-reverse-blueblack {
     background-color: $reverse-blueblack;
-    color : $blueblack;
+    color : black;
 }
 
 @mixin append_scrollbar {
@@ -45,19 +61,4 @@ $reverse-blueblack: #FFFFFA;
     flex-grow: 0;
     flex-shrink : 0;
     flex-basis :auto;
-}
-@mixin header1() {
-    font-size: 6vw;
-    padding: 20px;
-    border-bottom: 1px solid #f48600;
-    @media screen and (max-width: 768px){
-        font-size: 12vw;
-    }
-}
-@mixin header2() {
-    margin:0;
-    font-size: 8vw;
-    @media screen and (max-width: 768px){
-        font-size: 15vw;
-    }
 }

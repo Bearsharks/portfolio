@@ -11,8 +11,6 @@ function MyFooter(props) {
             >
                 iginganza@gmail.com
             </a>
-
-
         </div>
     );
 }

@@ -1,0 +1,31 @@
+@import "./global.scss";
+
+.project-category-name{
+    text-align: left;
+    padding: 5vh 30px 15px 30px;
+    border-bottom:  1px solid $blueblack;
+}
+.wrapper{
+    @include style-reverse-blueblack();
+}
+.project{
+    @include global-padding;
+}
+
+.personal-project-wrapper{
+    & h2{
+        border-bottom:  1.5px solid hsl(195, 100%, 7%);
+    }
+    & .project-list{
+        border-bottom:  1.5px solid #001A23;
+    }
+    & .project-list__info div{
+        border-left : 1px solid #001A23;
+    }
+    & .project-list__logo{
+        width: 170px;
+        height : 170px;
+    }
+}
+
+

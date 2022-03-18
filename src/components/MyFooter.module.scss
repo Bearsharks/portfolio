@@ -1,12 +1,12 @@
-@import "../global.scss";
+@import "global.scss";
 .wrapper{
     height : 80px;
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
     font-family: 'Helvetica';
+    background-color: $blueblack;
 }
 
 .mail{

@@ -1,5 +1,4 @@
 import styles from './MiniLinks.module.scss'
-import { ReactComponent as WIcon } from '../images/W.svg';
 import { ReactComponent as GithubIcon } from '../images/Github.svg';
 import { ReactComponent as EmailIcon } from '../images/Email.svg';
 function MiniLinks(props) {
@@ -25,16 +24,6 @@ function MiniLinks(props) {
                 title="Github"
             >
                 <GithubIcon width={linkSize} height={linkSize} fill="#FFFFFF"></GithubIcon>
-            </a>
-            <a
-                href="https://github.com/Bearsharks/dev-note/wiki"
-                className={styles['links__link']}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="개인 위키"
-            >
-
-                <WIcon width={linkSize} height={linkSize} fill="#FFFFFF"></WIcon>
             </a>
 
         </div>
