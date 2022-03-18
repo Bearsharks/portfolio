@@ -1,28 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b5f88ef2.chunk.css",
-    "main.js": "/portfolio/static/js/main.61947d5a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.61947d5a.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.76232b81.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.76232b81.js.map",
-    "static/js/2.a49103fc.chunk.js": "/portfolio/static/js/2.a49103fc.chunk.js",
-    "static/js/2.a49103fc.chunk.js.map": "/portfolio/static/js/2.a49103fc.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.c14d2705.css",
+    "main.js": "/portfolio/static/js/main.22a4f291.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/NotoSans-Regular.eot": "/portfolio/static/media/NotoSans-Regular.7c7f50cbc536eb2b68e9.eot",
+    "static/media/NotoSans-Regular.woff": "/portfolio/static/media/NotoSans-Regular.d19c129f30e0373f60b6.woff",
+    "static/media/NotoSans-Light.eot": "/portfolio/static/media/NotoSans-Light.516f7bce44bf65da2463.eot",
+    "static/media/NotoSans-Light.woff": "/portfolio/static/media/NotoSans-Light.1214e1a50a7c03f7940e.woff",
+    "static/media/NotoSans-Thin.eot": "/portfolio/static/media/NotoSans-Thin.5f9a1e0f54e8a2bcdbc2.eot",
+    "static/media/NotoSans-Thin.woff": "/portfolio/static/media/NotoSans-Thin.7a561ac968999a5dade3.woff",
+    "static/media/NotoSans-Regular.woff2": "/portfolio/static/media/NotoSans-Regular.12c5f3f9045594368915.woff2",
+    "static/media/NotoSans-Light.woff2": "/portfolio/static/media/NotoSans-Light.d3283d226f8f74e7a8d5.woff2",
+    "static/media/NotoSans-Thin.woff2": "/portfolio/static/media/NotoSans-Thin.9a72164420c5bea92570.woff2",
+    "static/media/Github.svg": "/portfolio/static/media/Github.193cd84e5a5b758212f53206831456b1.svg",
     "index.html": "/portfolio/index.html",
-    "static/css/main.b5f88ef2.chunk.css.map": "/portfolio/static/css/main.b5f88ef2.chunk.css.map",
-    "static/js/2.a49103fc.chunk.js.LICENSE.txt": "/portfolio/static/js/2.a49103fc.chunk.js.LICENSE.txt",
-    "static/media/Email.8a7549a4.svg": "/portfolio/static/media/Email.8a7549a4.svg",
-    "static/media/Github.193cd84e.svg": "/portfolio/static/media/Github.193cd84e.svg",
-    "static/media/W.c4b34f8c.svg": "/portfolio/static/media/W.c4b34f8c.svg",
-    "static/media/arrow_back.873d8fb3.svg": "/portfolio/static/media/arrow_back.873d8fb3.svg",
-    "static/media/expand.2d5161ec.svg": "/portfolio/static/media/expand.2d5161ec.svg",
-    "static/media/imageMosaicShow1.6063f30e.gif": "/portfolio/static/media/imageMosaicShow1.6063f30e.gif",
-    "static/media/imageMosaicShow2.4525c709.gif": "/portfolio/static/media/imageMosaicShow2.4525c709.gif",
-    "static/media/imlogo.2349e7f6.png": "/portfolio/static/media/imlogo.2349e7f6.png"
+    "static/media/Email.svg": "/portfolio/static/media/Email.8a7549a4df592129eea051b880599826.svg",
+    "static/media/expand.svg": "/portfolio/static/media/expand.c54a872e4a046e49364c2ed2eb489be6.svg",
+    "main.c14d2705.css.map": "/portfolio/static/css/main.c14d2705.css.map",
+    "main.22a4f291.js.map": "/portfolio/static/js/main.22a4f291.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.76232b81.js",
-    "static/js/2.a49103fc.chunk.js",
-    "static/css/main.b5f88ef2.chunk.css",
-    "static/js/main.61947d5a.chunk.js"
+    "static/css/main.c14d2705.css",
+    "static/js/main.22a4f291.js"
   ]
 }
