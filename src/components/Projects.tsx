@@ -8,7 +8,7 @@ function Projects() {
     //popup내용채우기
     return <div className={styles["grid-container"]}>
         <div className={styles["grid-item"]} onClick={() => setModalKind(ModalKind.SMP)}>
-            <img src="/portfolio/smp.PNG"></img>
+            <img src="/portfolio/smpPlaylist.png" alt="간단 뮤직 플레이어"></img>
             <div className={styles["content-name"]}>Simple music player</div>
         </div>
         <div className={styles["grid-item"]} onClick={() => setModalKind(ModalKind.MOSAIC)}>

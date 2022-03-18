@@ -34,7 +34,7 @@ const contents: ModalMetaData[] = [{
         "Github Actions, Github Page를 활용한 CI/CD",
         "반응형 웹 디자인 적용"
     ],
-    image: "/portfolio/smp1.png",
+    image: "/portfolio/smpPlaylist.png",
     GitLink: "https://github.com/Bearsharks/simple-music-player",
     link: "https://bearsharks.github.io/simple-music-player",
     p: [{
