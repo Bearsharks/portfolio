@@ -1,0 +1,14 @@
+@import "src/global.scss";
+.wrapper{
+    background-color: $blueblack;
+    color:$reverse-blueblack;
+    margin: 0 auto;
+    line-height: 1.3;
+    width: 100%;
+    @include global-padding;
+}
+
+
+.intro{    
+    padding: 40px 30px;    
+}
